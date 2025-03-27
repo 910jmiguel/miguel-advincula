@@ -10,16 +10,8 @@ const About = () => {
         </div>
         <div className="space-y-4">
           <p className="text-lg text-zinc-300">
-            With over 5 years of experience in web development, I've worked with clients across various industries
-            to deliver exceptional digital experiences.
-          </p>
-          <p className="text-lg text-zinc-300">
-            My approach combines technical expertise with creative problem-solving to build solutions that not
-            only look great but also perform exceptionally well.
-          </p>
-          <p className="text-lg text-zinc-300">
-            When I'm not coding, you can find me exploring new technologies, contributing to open-source projects,
-            or enjoying outdoor activities.
+          Hey, I'm Miguel👋! Born and raised in the Toronto area, I'm currently a 2nd year Computer Science student at York University
+          who is passionate about full-stack development and software engineering, constantly exploring new technologies to create innovative applications.
           </p>
         </div>
       </div>
