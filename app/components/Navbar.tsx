@@ -7,7 +7,7 @@ const Navbar = () => {
         <div className="container flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <span className="text-xl font-bold">
-              Dev<span className="text-blue-500">Portfolio</span>
+              Miguel <span className="text-blue-500">Advincula</span>
             </span>
           </Link>
           <div className="flex items-center gap-4">
