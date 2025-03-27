@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 
 const Hero = () => {
   return (
-<section id="hero" className="min-h-screen grid lg:grid-cols-2">
+<section id="hero" className="min-h-screen grid lg:grid-cols-2 animate-fade-down">
           {/* Left Side */}
           <div className="flex items-center justify-center p-8 bg-zinc-900">
             <div className="flex flex-col items-center lg:items-start gap-4 pt-16 lg:pt-0">
