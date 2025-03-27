@@ -1,5 +1,5 @@
 import { Download, Github, Linkedin, Mail  } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/app/ui/button"
 
 const Hero = () => {
   return (
