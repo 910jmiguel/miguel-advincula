@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const About = () => {
@@ -7,6 +8,7 @@ const About = () => {
       <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">About Me</h2>
       <div className="grid md:grid-cols-2 gap-8 items-center">
         <div>
+          <Image src="/miguel2.jpeg" alt="miguel2" width="350" height="350" />
         </div>
         <div className="space-y-4">
           <p className="text-lg text-zinc-300">
