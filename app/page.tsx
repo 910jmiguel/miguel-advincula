@@ -10,10 +10,12 @@ export default function Home() {
     <div className="animate-fade-down min-h-screen bg-black text-white">
       <Navbar />
       <Hero />
+      <div className="">
       <About />
       <Skills />
       <Projects />
       <Contact />
+      </div>
     </div>
   );
 }

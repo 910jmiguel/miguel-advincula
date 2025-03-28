@@ -2,7 +2,7 @@ import React from 'react'
 
 const About = () => {
   return (
-    <section id="about" className="py-16 md:py-24 bg-black animate-fade-down">
+    <section id="about" className="py-16 md:py-24 bg-zinc-900 animate-fade-down">
     <div className="container">
       <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">About Me</h2>
       <div className="grid md:grid-cols-2 gap-8 items-center">
