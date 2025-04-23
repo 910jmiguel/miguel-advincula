@@ -1,4 +1,6 @@
+"use client";
 import skills from "@/constants/skills"
+import Image from "next/image";
 
 const Skills = () => {
   return (
@@ -11,7 +13,14 @@ const Skills = () => {
                   key={skill.name}
                   className="bg-zinc-900 p-6 rounded-lg border border-zinc-800 flex flex-col items-center text-center"
                 >
-                  <div className="w-16 h-16 flex items-center justify-center text-blue-500 mb-4">{skill.icon}</div>
+                  <div className="w-16 h-16 flex items-center justify-center text-blue-500 mb-4">
+                    <Image
+                      src={skill.icon}
+                      alt={skill.name}
+                      width={40}
+                      height={40}
+                    />
+                  </div>
                   <h3 className="font-medium text-lg mb-2">{skill.name}</h3>
                 </div>
               ))}
