@@ -22,8 +22,24 @@ const Hero = () => {
       {/* Left Side */}
       <div className="flex items-center justify-center p-8 bg-gradient-to-b from-black via-zinc-950 to-zinc-900 min-h-screen">
         <div className="flex flex-col items-center lg:items-start gap-4 pt-16 lg:pt-0">
+          {/* Profile Picture */}
           <div className="flex items-center justify-center mb-4">
-            <Image src="/miguel.jpeg" alt="miguel" width="350" height="400" />
+            <div className="relative">
+              {/* Gradient background layers */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 rounded-full blur-lg opacity-75 animate-pulse"></div>
+              <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-400 rounded-full blur-md opacity-60"></div>
+
+              {/* Profile picture */}
+              <div className="relative">
+                <Image
+                  src="/miguel.jpeg"
+                  alt="miguel"
+                  width="350"
+                  height="350"
+                  className="rounded-full object-cover object-top border-4 border-white/10 shadow-2xl"
+                />
+              </div>
+            </div>
           </div>
           <div className="flex gap-4 mt-6">
             <Github
@@ -45,7 +61,7 @@ const Hero = () => {
             Miguel Advincula
           </h1>
           <h3 className="text-xl md:text-2xl font-semibold text-zinc-300 mb-4 text-center lg:text-left">
-            Computer Science Student @ York University
+            Computer Science Student, & Potential Software Engineer
           </h3>
           <p className="text-lg text-zinc-400 max-w-lg mb-8 text-center lg:text-left">
             Hi there! 👋

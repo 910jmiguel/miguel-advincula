@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 const Navbar = () => {
   return (
@@ -6,8 +7,13 @@ const Navbar = () => {
       <header className="fixed w-full z-50 bg-black/50 backdrop-blur-sm border-b border-white/10">
         <div className="container flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-white">
-              Miguel <span className="text-blue-500">Advincula</span>
+            <span>
+              <Image
+                src="/navbar_logo.png"
+                alt="navbar logo"
+                width={300}
+                height={300}
+                ></Image> 
             </span>
           </Link>
           <div className="flex items-center gap-4">
