@@ -61,7 +61,7 @@ const Hero = () => {
             Miguel Advincula
           </h1>
           <h3 className="text-xl md:text-2xl font-semibold text-zinc-300 mb-4 text-center lg:text-left">
-            Computer Science Student, & Potential Software Engineer
+            Computer Science Student | AI & Full Stack Developer
           </h3>
           <p className="text-lg text-zinc-400 max-w-lg mb-8 text-center lg:text-left">
             Hi there! 👋

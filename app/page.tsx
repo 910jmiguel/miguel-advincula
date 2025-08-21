@@ -7,6 +7,7 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import LoadingScreen from "./components/Loading";
 import { useState, useEffect } from 'react';
+import Work from "./components/Work";
 
 export default function Home() {
 
@@ -29,6 +30,7 @@ export default function Home() {
       <div className="">
       <About />
       <Skills />
+      <Work />
       <Projects />
       <Contact />
       </div>
