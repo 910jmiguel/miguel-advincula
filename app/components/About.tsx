@@ -44,7 +44,7 @@ const About = () => {
     },
     {
       icon: <Plane className="w-8 h-8" />,
-      title: "Travel Lover",
+      title: "Travel",
       description:
         "Passionate about exploring new places and experiencing different cultures",
       color: "from-indigo-500 to-purple-500",
@@ -133,12 +133,12 @@ const About = () => {
             </div>
 
             <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-              {/* University Logo */}
+              {/* York University Logo */}
               <div className="flex-shrink-0 relative group">
                 <div className="absolute -inset-6 bg-gradient-to-r from-red-500/20 to-red-700/20 rounded-3xl blur-2xl group-hover:blur-3xl opacity-50 group-hover:opacity-70 transition-all duration-500"></div>
                 <div className="relative w-40 h-40 lg:w-48 lg:h-48 bg-gradient-to-br from-red-600 to-red-800 rounded-3xl flex items-center justify-center shadow-2xl group-hover:shadow-red-500/30 transition-all duration-500 border border-red-500/20">
                   <Image
-                    src="/york-university-logo.svg"
+                    src="/yorkulogo.jpg"
                     alt="York University Logo"
                     width={120}
                     height={120}
@@ -148,11 +148,11 @@ const About = () => {
               </div>
 
               <div className="flex-1 text-center lg:text-left space-y-4">
-                <h4 className="text-3xl lg:text-4xl font-bold text-transparent bg-gradient-to-r from-white via-red-100 to-white bg-clip-text">
-                  York University
+                <h4 className="text-3xl lg:text-3xl font-bold text-transparent bg-gradient-to-r from-white via-red-100 to-white bg-clip-text">
+                  York University, Lassonde School of Engineering
                 </h4>
                 <p className="text-xl lg:text-2xl bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent font-semibold">
-                  Bachelor of Arts (Honours) - Computer Science
+                  Bachelor of Arts (Specialized Honours) - Computer Science
                 </p>
                 <p className="text-lg lg:text-xl text-purple-400 font-medium">
                   Software Development Stream
@@ -160,13 +160,13 @@ const About = () => {
                 <div className="flex flex-wrap justify-center lg:justify-start gap-4 lg:gap-6 text-base lg:text-lg text-zinc-400 pt-2">
                   <span className="flex items-center gap-2 bg-zinc-800/50 px-3 py-2 rounded-lg">
                     <MapPin className="w-4 h-4" />
-                    Toronto, Ontario
+                    Toronto, Ontario, Canada
                   </span>
                   <span className="bg-zinc-800/50 px-3 py-2 rounded-lg">
                     Expected Graduation: 2027
                   </span>
                   <span className="bg-zinc-800/50 px-3 py-2 rounded-lg">
-                    Current: 2nd Year
+                    Current: 3rd Year
                   </span>
                 </div>
               </div>
