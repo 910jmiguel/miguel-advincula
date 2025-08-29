@@ -4,7 +4,7 @@ import { Download, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/app/ui/button";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-//I'm Miguel, and I am a passionate full-stack developer with a keen interest in software engineering. I love creating innovative applications and exploring new technologies to enhance my skills.
+
 const Hero = () => {
   const [mounted, setMounted] = useState(false);
 
@@ -20,7 +20,7 @@ const Hero = () => {
       }`}
     >
       {/* Left Side */}
-      <div className="flex items-center justify-center p-8 bg-gradient-to-b from-black via-zinc-950 to-zinc-900 min-h-screen">
+      <div className="flex items-center justify-center p-8 bg-gradient-to-b from-black to-zinc-950 min-h-screen">
         <div className="flex flex-col items-center lg:items-start gap-4 pt-16 lg:pt-0">
           {/* Profile Picture */}
           <div className="flex items-center justify-center mb-4">
@@ -44,10 +44,12 @@ const Hero = () => {
           <div className="flex gap-4 mt-6">
             <Github
               className="text-zinc-400 hover:text-white transition-colors duration-300 cursor-pointer"
+              onClick={() => window.open("https://github.com/910jmiguel", "_blank")}
               size={24}
             />
             <Linkedin
               className="text-zinc-400 hover:text-white transition-colors duration-300 cursor-pointer"
+              onClick={() => window.open("https://www.linkedin.com/in/miguel-advincula-691ba0279/", "_blank")}
               size={24}
             />
           </div>
@@ -55,7 +57,7 @@ const Hero = () => {
       </div>
 
       {/* Right Side */}
-      <div className="relative flex flex-col bg-gradient-to-b from-black via-zinc-950 to-zinc-900 min-h-screen p-8">
+      <div className="relative flex flex-col bg-gradient-to-b from-black to-zinc-950 min-h-screen p-8">
         <div className="flex-1 flex flex-col items-center lg:items-start justify-center pt-16 lg:pt-0">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 text-center lg:text-left">
             Miguel Advincula
