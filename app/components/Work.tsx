@@ -11,6 +11,20 @@ import {
   Code2,
 } from "lucide-react";
 
+interface Experience {
+  id: number;
+  company: string;
+  position: string;
+  type: string;
+  duration: string;
+  location: string;
+  description: string;
+  logo: string;
+  techStack?: string[];
+  skills?: string[];
+  color: string;
+}
+
 const Work = () => {
   const [activeTab, setActiveTab] = useState<"tech" | "parttime">("tech");
 
@@ -122,7 +136,7 @@ const Work = () => {
     experience,
     isTech = true,
   }: {
-    experience: any;
+    experience: Experience;
     isTech?: boolean;
   }) => (
     <div className="group bg-zinc-900/50 backdrop-blur-sm rounded-2xl p-6 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-2">
@@ -269,7 +283,7 @@ const Work = () => {
                       Ready for New Opportunities
                     </h3>
                     <p className="text-zinc-400 max-w-md mx-auto">
-                      I'm actively seeking internships, co-op positions, and
+                      I&apos;m actively seeking internships, co-op positions, and
                       entry-level roles where I can apply my skills and grow as
                       a developer.
                     </p>
@@ -298,11 +312,11 @@ const Work = () => {
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-green-500/10 backdrop-blur-sm rounded-2xl p-8 border border-zinc-800">
             <h3 className="text-2xl font-bold mb-4 text-white">
-              Let's Work Together
+              Let&apos;s Work Together
             </h3>
             <p className="text-zinc-400 max-w-2xl mx-auto mb-6">
-              I'm always open to new opportunities and collaborations. Whether
-              it's an internship, co-op position, or project collaboration, I'd
+              I&apos;m always open to new opportunities and collaborations. Whether
+              it&apos;s an internship, co-op position, or project collaboration, I&apos;d
               love to hear from you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -11,15 +11,28 @@ import {
 } from "lucide-react";
 import { projects, projectCategories } from "../../constants/projects";
 
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image?: string;
+  techStack: string[];
+  githubUrl?: string;
+  liveUrl?: string;
+  category: string;
+  color: string;
+}
+
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   // Filter projects based on selected category
-  const filteredProjects = selectedCategory === "All" 
-    ? projects 
-    : projects.filter(project => project.category === selectedCategory);
+  const filteredProjects =
+    selectedCategory === "All"
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
 
-  const ProjectCard = ({ project }: { project: any }) => (
+  const ProjectCard = ({ project }: { project: Project }) => (
     <div className="group bg-zinc-900/50 backdrop-blur-sm rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-2">
       {/* Project Image */}
       <div className="relative h-48 overflow-hidden">
@@ -34,11 +47,13 @@ const Projects = () => {
             className="object-cover transition-transform duration-500 group-hover:scale-110"
           />
         ) : (
-          <div className={`w-full h-full bg-gradient-to-br ${project.color} flex items-center justify-center`}>
+          <div
+            className={`w-full h-full bg-gradient-to-br ${project.color} flex items-center justify-center`}
+          >
             <Code2 className="w-16 h-16 text-white/80" />
           </div>
         )}
-        
+
         {/* Overlay with action buttons */}
         <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
           {project.githubUrl && (
@@ -76,7 +91,7 @@ const Projects = () => {
         <h3 className="font-bold text-xl text-white mb-2 group-hover:text-blue-300 transition-colors">
           {project.title}
         </h3>
-        
+
         <p className="text-zinc-400 text-sm leading-relaxed mb-4 line-clamp-3">
           {project.description}
         </p>
@@ -138,7 +153,8 @@ const Projects = () => {
             My Projects
           </h2>
           <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
-            A collection of projects that showcase my skills and passion for development
+            A collection of projects that showcase my skills and passion for
+            development
           </p>
         </div>
 
@@ -192,7 +208,8 @@ const Projects = () => {
                   No Projects Found
                 </h3>
                 <p className="text-zinc-400">
-                  No projects match the selected category. Try selecting a different filter.
+                  No projects match the selected category. Try selecting a
+                  different filter.
                 </p>
               </div>
             </div>
@@ -206,8 +223,9 @@ const Projects = () => {
               More Projects Coming Soon
             </h3>
             <p className="text-zinc-400 max-w-2xl mx-auto mb-6">
-              I'm constantly working on new projects and learning new technologies. 
-              Check out my GitHub for the latest updates and contributions.
+              I&apos;m constantly working on new projects and learning new
+              technologies. Check out my GitHub for the latest updates and
+              contributions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -230,7 +248,7 @@ const Projects = () => {
               >
                 <span className="flex items-center justify-center gap-2">
                   <Star className="w-4 h-4" />
-                  Let's Collaborate
+                  Let&apos;s Collaborate
                 </span>
               </a>
             </div>

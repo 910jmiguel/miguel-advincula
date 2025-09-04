@@ -222,10 +222,10 @@ const About = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 backdrop-blur-sm rounded-3xl p-8 border border-zinc-800 hover:border-zinc-600 transition-all duration-500">
             <h3 className="text-3xl font-bold mb-4 text-white">
-              Let's Connect!
+              Let&apos;s Connect!
             </h3>
             <p className="text-zinc-400 max-w-2xl mx-auto mb-8 text-lg leading-relaxed">
-              I'm always excited to discuss new opportunities, collaborate on
+              I&apos;m always excited to discuss new opportunities, collaborate on
               innovative projects, or simply chat about technology, creativity,
               and life experiences.
             </p>

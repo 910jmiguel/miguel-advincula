@@ -25,9 +25,7 @@ export default function RootLayout({
       className="dark scroll-smooth"
       style={{ colorScheme: "dark" }}
     >
-      <body
-        className={`${inter.className} antialiased`}
-      >
+      <body className={`${inter.className} antialiased`}>
         <ThemeProvider>
           <Navbar />
           {children}

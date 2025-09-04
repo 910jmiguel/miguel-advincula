@@ -133,7 +133,7 @@ const Skills = () => {
           <div className="bg-zinc-900/30 backdrop-blur-sm rounded-2xl p-8 border border-zinc-800">
             <h3 className="text-xl font-semibold mb-4">Always Learning</h3>
             <p className="text-zinc-400 max-w-3xl mx-auto">
-              Technology evolves rapidly, and I'm committed to continuous
+              Technology evolves rapidly, and I&apos;m committed to continuous
               learning. Currently exploring advanced AI/ML concepts, cloud
               architecture patterns, and emerging web technologies to stay at
               the forefront of software development.

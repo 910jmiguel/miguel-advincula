@@ -12,6 +12,20 @@ const Hero = () => {
     setMounted(true);
   }, []);
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
+  const openResume = () => {
+    window.open("/JMA_Resume_Sep2025.pdf", "_blank");
+  };
+
   return (
     <section
       id="hero"
@@ -21,7 +35,7 @@ const Hero = () => {
     >
       {/* Left Side */}
       <div className="flex items-center justify-center p-8 bg-gradient-to-b from-black to-zinc-950 min-h-screen">
-        <div className="flex flex-col items-center lg:items-start gap-4 pt-16 lg:pt-0">
+        <div className="flex flex-col items-center gap-4 pt-16 lg:pt-0">
           {/* Profile Picture */}
           <div className="flex items-center justify-center mb-4">
             <div className="relative">
@@ -40,18 +54,6 @@ const Hero = () => {
                 />
               </div>
             </div>
-          </div>
-          <div className="flex gap-4 mt-6">
-            <Github
-              className="text-zinc-400 hover:text-white transition-colors duration-300 cursor-pointer"
-              onClick={() => window.open("https://github.com/910jmiguel", "_blank")}
-              size={24}
-            />
-            <Linkedin
-              className="text-zinc-400 hover:text-white transition-colors duration-300 cursor-pointer"
-              onClick={() => window.open("https://www.linkedin.com/in/miguel-advincula-691ba0279/", "_blank")}
-              size={24}
-            />
           </div>
         </div>
       </div>
@@ -74,6 +76,7 @@ const Hero = () => {
             <Button
               size="lg"
               className="gap-2 bg-blue-500 hover:bg-blue-400 text-white"
+              onClick={scrollToContact}
             >
               <Mail size={24} />
               Contact Me
@@ -82,10 +85,39 @@ const Hero = () => {
               size="lg"
               variant="outline"
               className="gap-2 border-white/20 hover:bg-white/10 bg-black"
+              onClick={openResume}
             >
               <Download className="h-4 w-4" />
               See Resume
             </Button>
+          </div>
+
+          {/* Social Media Icons */}
+          <div className="flex gap-6 mt-6 justify-center lg:justify-center">
+            <a
+              href="https://github.com/910jmiguel"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-center w-12 h-12 rounded-full bg-zinc-800/50 border border-zinc-700/50 hover:bg-zinc-700/50 hover:border-zinc-600 transition-all duration-300 hover:scale-110"
+              aria-label="Visit Miguel's GitHub profile"
+            >
+              <Github
+                className="text-zinc-300 group-hover:text-white transition-colors duration-300"
+                size={24}
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/miguel-advincula-691ba0279/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-center w-12 h-12 rounded-full bg-zinc-800/50 border border-zinc-700/50 hover:bg-zinc-700/50 hover:border-zinc-600 transition-all duration-300 hover:scale-110"
+              aria-label="Visit Miguel's LinkedIn profile"
+            >
+              <Linkedin
+                className="text-zinc-300 group-hover:text-blue-400 transition-colors duration-300"
+                size={24}
+              />
+            </a>
           </div>
         </div>
       </div>

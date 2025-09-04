@@ -10,13 +10,13 @@ const Footer = () => {
             © {new Date().getFullYear()} Miguel Advincula. All rights reserved.
           </p>
           <div className="flex gap-x-6">
-                <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="mailto:910jmiguel@gmail.com" className="text-gray-400 hover:text-white transition-colors">
               <Mail size={20} />
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+            <Link href="https://www.linkedin.com/in/910jmiguel/" className="text-gray-400 hover:text-white transition-colors">
               <Linkedin size={20} />
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+            <Link href="https://github.com/910jmiguel" className="text-gray-400 hover:text-white transition-colors">
               <Github size={20} />
             </Link>
           </div>
