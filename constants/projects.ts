@@ -1,0 +1,52 @@
+export const projects = [
+  {
+    id: 1,
+    title: "🔐 LockedIn",
+    description: "Building a student productivity dashboard to track assignments with a synced calendar, schedule courses, and stay focused using a Pomodoro timer.",
+    image: "/project-placeholder.svg", 
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "React", "PostgreSQL", "NeonDB", "DrizzleORM", "BetterAuth"],
+    githubUrl: "https://github.com/910jmiguel/lockedin",
+    category: "Full Stack",
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    id: 2,
+    title: "🌎🤖 InteliEarth | GenAI Genesis 2025",
+    description: "An eco-friendly, self-hosted AI tutoring solution for students to provide personalized education while reducing CO₂ emissions.",
+    image: "/genai.png",
+    techStack: ["React", "Node.js", "Ollama", "LangChain", "FastAPI"],
+    githubUrl: "https://github.com/910jmiguel/GenAiHackathon",
+    category: "AI/ML",
+    color: "from-purple-500 to-pink-500",
+  },
+  {
+    id: 3,
+    title: "📚 YULearn | 🏆 3rd Place WINNER at BEST Startup Experience",
+    description: "(Startup Concept) An AI-powered platform to bridge the gap between academia and industry expectations for CS and SWE students.",
+    image: "/yulearn.png",
+    techStack: ["React", "Next.js", "NeonDB", "DrizzleORM", "PostgreSQL", "TypeScript"],
+    githubUrl: "https://github.com/910jmiguel/YUlearn/tree/main",
+    liveUrl: "https://docs.google.com/presentation/d/1mmPml3bYViGwdKy1LfTQjTGFgAUR1sMp8lleC3NClz8/edit?usp=sharing",
+    category: "Web Application",
+    color: "from-green-500 to-emerald-500",
+  },
+  {
+    id: 4,
+    title: "🍁 Eh-conomy | HackCanada 2025",
+    description: "An app that discovers and promotes local Canadian farms and markets to encourage people to buy Canadian, due to the ongoing tariff war.",
+    image: "/ehconomy.png",
+    techStack: ["Next.js", "React", "Python", "Django", "Firebase"],
+    githubUrl: "https://github.com/910jmiguel/Eh-conomy",
+    liveUrl: "https://eh-conomy1.vercel.app/",
+    category: "Full Stack",
+    color: "from-orange-500 to-red-500",
+  },
+];
+
+export const projectCategories = [
+  "All",
+  "Full Stack", 
+  "Frontend",
+  "Backend",
+  "AI/ML"
+];
