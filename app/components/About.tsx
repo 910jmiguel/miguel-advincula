@@ -92,7 +92,6 @@ const About = () => {
 
               {/* Profile Info */}
               <div className="flex-1 text-center lg:text-left space-y-6">
-
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="group bg-gradient-to-br from-zinc-800/60 to-zinc-900/60 rounded-xl p-5 text-center border border-zinc-700/50 hover:border-zinc-600/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10">
                     <div className="text-2xl lg:text-3xl font-bold text-purple-400 group-hover:scale-110 transition-transform duration-300">
@@ -113,7 +112,10 @@ const About = () => {
                 </div>
 
                 <p className="text-zinc-300 leading-relaxed text-lg lg:text-xl max-w-2xl lg:max-w-none">
-                  Aspiring full-stack developer based in Toronto, currently studying Computer Science. Passionate about learning, experimenting with new technologies, and creating applications that make an impact.
+                  Aspiring full-stack developer based in Toronto, currently
+                  studying Computer Science. Passionate about learning,
+                  experimenting with new technologies, and creating applications
+                  that make an impact.
                 </p>
               </div>
             </div>
@@ -225,9 +227,9 @@ const About = () => {
               Let&apos;s Connect!
             </h3>
             <p className="text-zinc-400 max-w-2xl mx-auto mb-8 text-lg leading-relaxed">
-              I&apos;m always excited to discuss new opportunities, collaborate on
-              innovative projects, or simply chat about technology, creativity,
-              and life experiences.
+              I&apos;m always excited to discuss new opportunities, collaborate
+              on innovative projects, or simply chat about technology,
+              creativity, and life experiences.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="group px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/25">

@@ -107,7 +107,7 @@ const Work = () => {
         "Guest Service",
         "Point of Sales (POS) Systems",
         "Associate Development",
-        "Collaborative Problem Solving"
+        "Collaborative Problem Solving",
       ],
       color: "from-orange-500 to-red-500",
     },
@@ -283,9 +283,9 @@ const Work = () => {
                       Ready for New Opportunities
                     </h3>
                     <p className="text-zinc-400 max-w-md mx-auto">
-                      I&apos;m actively seeking internships, co-op positions, and
-                      entry-level roles where I can apply my skills and grow as
-                      a developer.
+                      I&apos;m actively seeking internships, co-op positions,
+                      and entry-level roles where I can apply my skills and grow
+                      as a developer.
                     </p>
                   </div>
                 </div>
@@ -315,9 +315,9 @@ const Work = () => {
               Let&apos;s Work Together
             </h3>
             <p className="text-zinc-400 max-w-2xl mx-auto mb-6">
-              I&apos;m always open to new opportunities and collaborations. Whether
-              it&apos;s an internship, co-op position, or project collaboration, I&apos;d
-              love to hear from you.
+              I&apos;m always open to new opportunities and collaborations.
+              Whether it&apos;s an internship, co-op position, or project
+              collaboration, I&apos;d love to hear from you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="group px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/25">
