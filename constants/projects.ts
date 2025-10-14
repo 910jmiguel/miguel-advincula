@@ -1,6 +1,17 @@
 export const projects = [
   {
     id: 1,
+    title: "📉 Anti-Inflation",
+    description: "A web app that tracks and visualizes inflation trends, providing users with insights and tools to make informed financial decisions.",
+    image: "/anti-inflation.png", 
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "React", "PostgreSQL", "NeonDB", "DrizzleORM", "BetterAuth"],
+    githubUrl: "https://github.com/910jmiguel/Anti-Inflation",
+    liveUrl: "https://anti-inflation-adhq.vercel.app/",
+    category: "Full Stack",
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    id: 2,
     title: "🔐 LockedIn",
     description: "Building a student productivity dashboard to track assignments with a synced calendar, schedule courses, and stay focused using a Pomodoro timer.",
     image: "/project-placeholder.svg", 
@@ -10,7 +21,7 @@ export const projects = [
     color: "from-blue-500 to-cyan-500",
   },
   {
-    id: 2,
+    id: 3,
     title: "🌎🤖 InteliEarth | GenAI Genesis 2025",
     description: "An eco-friendly, self-hosted AI tutoring solution for students to provide personalized education while reducing CO₂ emissions.",
     image: "/genai.png",
@@ -20,7 +31,7 @@ export const projects = [
     color: "from-purple-500 to-pink-500",
   },
   {
-    id: 3,
+    id: 4,
     title: "📚 YULearn | 🏆 3rd Place WINNER at BEST Startup Experience",
     description: "(Startup Concept) An AI-powered platform to bridge the gap between academia and industry expectations for CS and SWE students.",
     image: "/yulearn.png",
@@ -31,7 +42,7 @@ export const projects = [
     color: "from-green-500 to-emerald-500",
   },
   {
-    id: 4,
+    id: 5,
     title: "🍁 Eh-conomy | HackCanada 2025",
     description: "An app that discovers and promotes local Canadian farms and markets to encourage people to buy Canadian, due to the ongoing tariff war.",
     image: "/ehconomy.png",

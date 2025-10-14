@@ -22,11 +22,9 @@ const Hero = () => {
     }
   };
 
-  const openResume = () => {
-    window.open("/JMA_Resume_Sep2025.pdf", "_blank");
-  };
-
-  return (
+  const handleDownloadResume = () => {
+    window.open("/JMA_CS_Resume_Oct2025.pdf", "_blank");
+  };  return (
     <section
       id="hero"
       className={`min-h-screen grid lg:grid-cols-2 ${
@@ -85,7 +83,7 @@ const Hero = () => {
               size="lg"
               variant="outline"
               className="gap-2 border-white/20 hover:bg-white/10 bg-black"
-              onClick={openResume}
+              onClick={handleDownloadResume}
             >
               <Download className="h-4 w-4" />
               See Resume

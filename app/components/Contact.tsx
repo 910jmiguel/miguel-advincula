@@ -223,7 +223,7 @@ const Contact = () => {
               </h4>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href="/JMA_Resume_Sep2025.pdf"
+                  href="/JMA_CS_Resume_Oct2025.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
