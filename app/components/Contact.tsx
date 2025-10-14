@@ -106,7 +106,7 @@ const Contact = () => {
       copyText: "https://www.instagram.com/miguel.advincula_/",
       color: "from-pink-500 to-purple-500",
       hoverColor: "hover:shadow-pink-500/20",
-    }
+    },
   ];
 
   // Prevent hydration mismatch by not rendering interactive elements on server
@@ -305,7 +305,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 bg-zinc-900/50 border border-zinc-700 rounded-lg text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                  placeholder="What&apos;s this about?"
+                  placeholder="What's this about?"
                 />
               </div>
 
@@ -351,11 +351,11 @@ const Contact = () => {
               Let&apos;s Build Something Amazing Together
             </h3>
             <p className="text-zinc-400 max-w-3xl mx-auto text-lg leading-relaxed">
-              Whether you&apos;re looking for a dedicated developer for your team,
-              have an exciting project idea, or want to discuss the latest in
-              technology, I&apos;m always open to meaningful conversations. Let&apos;s
-              connect and explore how we can create something impactful
-              together.
+              Whether you&apos;re looking for a dedicated developer for your
+              team, have an exciting project idea, or want to discuss the latest
+              in technology, I&apos;m always open to meaningful conversations.
+              Let&apos;s connect and explore how we can create something
+              impactful together.
             </p>
           </div>
         </div>

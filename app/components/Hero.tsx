@@ -24,7 +24,8 @@ const Hero = () => {
 
   const handleDownloadResume = () => {
     window.open("/JMA_CS_Resume_Oct2025.pdf", "_blank");
-  };  return (
+  };
+  return (
     <section
       id="hero"
       className={`min-h-screen grid lg:grid-cols-2 ${
