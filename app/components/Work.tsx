@@ -31,6 +31,19 @@ const Work = () => {
   // Tech/Professional Experience
   const techExperience = [
     {
+      id: 2,
+      company: "Pitstop",
+      position: "AI & Software Engineer Intern",
+      type: "Co-op / Internship",
+      duration: "Winter 2026",
+      location: "Toronto, ON",
+      description:
+        "Incoming position for the Winter 2026 term. My work will focus on improving the work order scan tool and dashboard report generation, collaborating with UI/UX, backend, and data teams to enhance product functionality. I’ll also support data analysis, visualization, and backend services that integrate vehicle telematics, IoT data, and predictive maintenance insights.",
+      logo: "/pitstopconnect_logo.jpg",
+      techStack: ["TBA"],
+      color: "from-blue-500 to-cyan-500",
+    },
+    {
       id: 1,
       company: "PharmShift",
       position: "AI & Full-Stack Developer",
@@ -43,6 +56,7 @@ const Work = () => {
       techStack: ["React", "Node.js", "TypeScript", "MongoDB"],
       color: "from-blue-500 to-cyan-500",
     },
+
   ];
 
   // Part-time Experience
@@ -255,7 +269,7 @@ const Work = () => {
             >
               <span className="flex items-center gap-2">
                 <Clock className="w-4 h-4" />
-                Part-time Experience
+                Non-Tech Experience
               </span>
             </button>
           </div>
