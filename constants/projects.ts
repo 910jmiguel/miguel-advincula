@@ -1,9 +1,19 @@
 export const projects = [
   {
+    id: 6,
+    title: "Savour | ConUHacks '26",
+    description: "A grocery price comparison web app for Canadian shoppers. Compare prices across 5 major stores, build a basket, and see optimized shopping strategies.",
+    image: "/project-placeholder.svg",
+    techStack: ["React.js", "Vite", "TypeScript", "MongoDB", "Python", "FastAPI"],
+    githubUrl: "https://github.com/910jmiguel/Savour",
+    category: "Full Stack",
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
     id: 1,
     title: "Anti-Inflation",
     description: "A web app that tracks and visualizes inflation trends, providing users with insights and tools to make informed financial decisions.",
-    image: "/anti-inflation.png", 
+    image: "/anti-inflation.png",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "React", "PostgreSQL", "NeonDB", "DrizzleORM", "BetterAuth"],
     githubUrl: "https://github.com/910jmiguel/Anti-Inflation",
     liveUrl: "https://anti-inflation-adhq.vercel.app/",
@@ -14,7 +24,7 @@ export const projects = [
     id: 2,
     title: "LockedIn",
     description: "Building a student productivity dashboard to track assignments with a synced calendar, schedule courses, and stay focused using a Pomodoro timer.",
-    image: "/project-placeholder.svg", 
+    image: "/project-placeholder.svg",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "React", "PostgreSQL", "NeonDB", "DrizzleORM", "BetterAuth"],
     githubUrl: "https://github.com/910jmiguel/lockedin",
     category: "Full Stack",
@@ -33,7 +43,7 @@ export const projects = [
   {
     id: 4,
     title: "YULearn | 3rd Place Winner — BEST Startup Experience",
-    description: "(Startup Concept) An AI-powered platform to bridge the gap between academia and industry expectations for CS and SWE students.",
+    description: "3rd Place Winner ($600) at BEST Startup Experience. (Startup Concept) An AI-powered platform to bridge the gap between academia and industry expectations for CS and SWE students.",
     image: "/yulearn.png",
     techStack: ["React", "Next.js", "NeonDB", "DrizzleORM", "PostgreSQL", "TypeScript"],
     githubUrl: "https://github.com/910jmiguel/YUlearn/tree/main",
@@ -56,8 +66,9 @@ export const projects = [
 
 export const projectCategories = [
   "All",
-  "Full Stack", 
+  "Full Stack",
   "Frontend",
   "Backend",
-  "AI/ML"
+  "AI/ML",
+  "Web Application"
 ];

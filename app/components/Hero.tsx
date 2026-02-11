@@ -1,7 +1,9 @@
 "use client";
 
-import { Download, Github, Linkedin, Mail } from "lucide-react";
+import { Download, Github, Linkedin, Mail, Instagram, BookOpen } from "lucide-react";
+import { TikTokIcon } from "@/app/ui/icons";
 import { Button } from "@/app/ui/button";
+import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -23,7 +25,7 @@ const Hero = () => {
   };
 
   const handleDownloadResume = () => {
-    window.open("/JMA_CS_Resume_Oct2025.pdf", "_blank");
+    window.open("/JMA_CS_Resume_Feb2026.pdf", "_blank");
   };
   return (
     <section
@@ -33,47 +35,43 @@ const Hero = () => {
       }`}
     >
       {/* Left Side */}
-      <div className="flex items-center justify-center p-8 bg-black min-h-screen">
+      <div className="flex items-center justify-center p-8 bg-stone-50 min-h-screen">
         <div className="flex flex-col items-center gap-4 pt-16 lg:pt-0">
           {/* Profile Picture */}
           <div className="flex items-center justify-center mb-4">
             <div className="relative">
-              <div className="absolute -inset-2 bg-blue-500/20 rounded-full blur-md"></div>
-              <div className="relative">
-                <Image
-                  src="/miguel.jpeg"
-                  alt="miguel"
-                  width="350"
-                  height="350"
-                  className="rounded-full object-cover object-top border-4 border-white/10 shadow-2xl"
-                />
-              </div>
+              <Image
+                src="/miguel.jpeg"
+                alt="miguel"
+                width="350"
+                height="350"
+                className="rounded-full object-cover object-top border-2 border-stone-200 shadow-sm"
+              />
             </div>
           </div>
         </div>
       </div>
 
       {/* Right Side */}
-      <div className="relative flex flex-col bg-black min-h-screen p-8">
+      <div className="relative flex flex-col bg-stone-50 min-h-screen p-8">
         <div className="flex-1 flex flex-col items-center lg:items-start justify-center pt-16 lg:pt-0">
-          {/* v2 teaser */}
-          <div className="mb-6 px-4 py-2 border border-zinc-700 rounded-full text-sm text-zinc-400 text-center lg:text-left">
-            v2 coming soon — full revamp in progress
+          {/* Currently status */}
+          <div className="mb-6 px-4 py-2 border border-stone-300 rounded-full text-sm text-stone-500 text-center lg:text-left">
+            Currently: Building at HAVN Inc. · Interning at Pitstop · Creating content with Chatbase
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 text-center lg:text-left">
-            Miguel Advincula
+          <h1 className="text-4xl md:text-6xl font-bold text-stone-900 mb-6 text-center lg:text-left">
+            Miguel (Juan-Miguel) Advincula
           </h1>
-          <h3 className="text-xl md:text-2xl font-semibold text-zinc-300 mb-4 text-center lg:text-left">
-            Computer Science Student | AI & Full Stack Developer
+          <h3 className="text-xl md:text-2xl font-semibold text-stone-600 mb-4 text-center lg:text-left">
+            CS Student · Full-Stack Developer · Content Creator
           </h3>
-          <p className="text-lg text-zinc-400 max-w-lg mb-8 text-center lg:text-left">
-            CS student at York. I build things for the web and tinker with AI on
-            the side.
+          <p className="text-lg text-stone-500 max-w-lg mb-8 text-center lg:text-left">
+            CS student at York University. I build full-stack apps, create content, and care about building things that matter.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button
               size="lg"
-              className="gap-2 bg-blue-500 hover:bg-blue-400 text-white"
+              className="gap-2 bg-slate-700 hover:bg-slate-600 text-white"
               onClick={scrollToContact}
             >
               <Mail size={24} />
@@ -82,11 +80,22 @@ const Hero = () => {
             <Button
               size="lg"
               variant="outline"
-              className="gap-2 border-white/20 hover:bg-white/10 bg-black"
+              className="gap-2 border-stone-300 bg-white text-stone-700 hover:bg-stone-100"
               onClick={handleDownloadResume}
             >
               <Download className="h-4 w-4" />
               See Resume
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="gap-2 border-stone-300 bg-white text-stone-700 hover:bg-stone-100"
+              asChild
+            >
+              <Link href="/blog">
+                <BookOpen className="h-4 w-4" />
+                Read Blog
+              </Link>
             </Button>
           </div>
 
@@ -96,23 +105,47 @@ const Hero = () => {
               href="https://github.com/910jmiguel"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-center w-12 h-12 rounded-full bg-zinc-800/50 border border-zinc-700/50 hover:bg-zinc-700/50 hover:border-zinc-600 transition-colors duration-300"
+              className="group flex items-center justify-center w-12 h-12 rounded-full bg-stone-100 border border-stone-200 hover:bg-stone-200 hover:border-stone-300 transition-colors duration-200"
               aria-label="Visit Miguel's GitHub profile"
             >
               <Github
-                className="text-zinc-300 group-hover:text-white transition-colors duration-300"
+                className="text-stone-600 group-hover:text-stone-900 transition-colors duration-200"
                 size={24}
               />
             </a>
             <a
-              href="https://www.linkedin.com/in/miguel-advincula-691ba0279/"
+              href="https://www.linkedin.com/in/910jmiguel/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-center w-12 h-12 rounded-full bg-zinc-800/50 border border-zinc-700/50 hover:bg-zinc-700/50 hover:border-zinc-600 transition-colors duration-300"
+              className="group flex items-center justify-center w-12 h-12 rounded-full bg-stone-100 border border-stone-200 hover:bg-stone-200 hover:border-stone-300 transition-colors duration-200"
               aria-label="Visit Miguel's LinkedIn profile"
             >
               <Linkedin
-                className="text-zinc-300 group-hover:text-blue-400 transition-colors duration-300"
+                className="text-stone-600 group-hover:text-stone-900 transition-colors duration-200"
+                size={24}
+              />
+            </a>
+            <a
+              href="https://www.tiktok.com/@jmiguel.adv"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-center w-12 h-12 rounded-full bg-stone-100 border border-stone-200 hover:bg-stone-200 hover:border-stone-300 transition-colors duration-200"
+              aria-label="Visit Miguel's TikTok profile"
+            >
+              <TikTokIcon
+                className="text-stone-600 group-hover:text-stone-900 transition-colors duration-200"
+                size={24}
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/jmiguel.adv"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-center w-12 h-12 rounded-full bg-stone-100 border border-stone-200 hover:bg-stone-200 hover:border-stone-300 transition-colors duration-200"
+              aria-label="Visit Miguel's Instagram profile"
+            >
+              <Instagram
+                className="text-stone-600 group-hover:text-stone-900 transition-colors duration-200"
                 size={24}
               />
             </a>

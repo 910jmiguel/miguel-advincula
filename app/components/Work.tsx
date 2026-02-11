@@ -8,6 +8,7 @@ import {
   Building,
   Clock,
   Code2,
+  Award,
 } from "lucide-react";
 
 interface Experience {
@@ -25,29 +26,42 @@ interface Experience {
 }
 
 const Work = () => {
-  const [activeTab, setActiveTab] = useState<"tech" | "parttime">("tech");
+  const [activeTab, setActiveTab] = useState<"tech" | "parttime" | "leadership">("tech");
 
   // Tech/Professional Experience
-  const techExperience = [
+  const techExperience: Experience[] = [
     {
       id: 2,
       company: "Pitstop",
       position: "AI & Software Engineer Intern",
       type: "Co-op / Internship",
-      duration: "Winter 2026",
+      duration: "Jan 2026 – Present",
       location: "Toronto, ON",
       description:
-        "Incoming position for the Winter 2026 term. My work will focus on improving the work order scan tool and dashboard report generation, collaborating with UI/UX, backend, and data teams to enhance product functionality. I’ll also support data analysis, visualization, and backend services that integrate vehicle telematics, IoT data, and predictive maintenance insights.",
+        "Improving the work order scan tool and dashboard report generation, collaborating with UI/UX, backend, and data teams to enhance product functionality. Supporting data analysis, visualization, and backend services that integrate vehicle telematics, IoT data, and predictive maintenance insights.",
       logo: "/pitstopconnect_logo.jpg",
-      techStack: ["TBA"],
+      techStack: ["JavaScript", "Python"],
       color: "from-blue-500 to-cyan-500",
     },
     {
-      id: 1,
+      id: 3,
+      company: "HAVN Inc.",
+      position: "Founding Engineer",
+      type: "Co-Founder",
+      duration: "Nov 2025 – Present",
+      location: "Toronto, ON",
+      description:
+        "Building a privacy-first social platform from the ground up. Leading full-stack development across mobile and web, architecting backend services, and shipping features end-to-end in a fast-paced startup environment.",
+      logo: "/havn.jpg",
+      techStack: ["React Native", "Expo", "Python", "FastAPI", "AWS", "React.js", "TailwindCSS"],
+      color: "from-blue-500 to-cyan-500",
+    },
+    {
+      id: 4,
       company: "PharmShift",
-      position: "AI & Full-Stack Developer",
-      type: "Contract Part-Time",
-      duration: "Fall 2025",
+      position: "Web Developer",
+      type: "Part-Time Intern",
+      duration: "Aug 2025 – Dec 2025",
       location: "Toronto, ON",
       description:
         "Built and integrated user-facing features (multilingual support, user profiles, and a free case submission system) using React.js and Node.js, developed frontend–backend integrations for AI-powered OSCE exam preparation simulations, and collaborated on GCP deployment to deliver scalable, accessible, and affordable clinical scenario practice tools.",
@@ -55,11 +69,23 @@ const Work = () => {
       techStack: ["React", "Node.js", "TypeScript", "MongoDB"],
       color: "from-blue-500 to-cyan-500",
     },
-
   ];
 
   // Part-time Experience
-  const partTimeExperience = [
+  const partTimeExperience: Experience[] = [
+    {
+      id: 6,
+      company: "Chatbase",
+      position: "Content Creator",
+      type: "Freelance",
+      duration: "Feb 2026 – Present",
+      location: "Remote",
+      description:
+        "Creating branded content for Chatbase's AI chatbot platform across TikTok and Instagram. Developing content strategies to showcase AI capabilities and drive user engagement through short-form video content.",
+      logo: "/chatbase_co_logo.jpg",
+      skills: ["Content Strategy", "TikTok", "Instagram", "AI"],
+      color: "from-orange-500 to-red-500",
+    },
     {
       id: 1,
       company: "Canada's Wonderland",
@@ -124,24 +150,22 @@ const Work = () => {
       ],
       color: "from-orange-500 to-red-500",
     },
+  ];
+
+  // Leadership Experience
+  const leadershipExperience: Experience[] = [
     {
-      id: 5,
-      company: "Food Basics",
-      position: "Front End Clerk & Supervisor",
-      type: "Permanent Part-Time",
-      duration: "Jul 2022 - Jul 2024",
-      location: "Richmond Hill, ON",
+      id: 1,
+      company: "CUTC & Various Industry Events",
+      position: "Judge & Panelist",
+      type: "Volunteer",
+      duration: "Nov 2025 – Present",
+      location: "Toronto, ON",
       description:
-        "Assisted 100+ customer inquiries per shift, resolved complaints, trained new employees on POS and self-checkout systems, gained supervisory experience supporting cashier colleagues, and was recognized as Employee of the Month for excellent customer service and handling challenging situations.",
-      logo: "/foodbasics.jpg",
-      skills: [
-        "Leadership",
-        "Point of Systems (POS) Systems",
-        "Cash Handling",
-        "Employee Training",
-        "Customer Service",
-      ],
-      color: "from-orange-500 to-red-500",
+        "Judged AI projects at the Caffeine.ai Promptathon hosted by CUTC, evaluating prompt engineering and AI application quality. Served as a panelist at OTU's 'Hello AI' event, discussing AI trends and career paths in tech with students and industry professionals.",
+      logo: "/company-placeholder.svg",
+      skills: ["Public Speaking", "Judging", "AI", "Mentorship", "Networking"],
+      color: "from-amber-500 to-yellow-500",
     },
   ];
 
@@ -152,14 +176,12 @@ const Work = () => {
     experience: Experience;
     isTech?: boolean;
   }) => (
-    <div className="group bg-zinc-900/50 rounded-2xl p-6 border border-zinc-800 hover:border-zinc-700 transition-colors duration-300">
+    <div className="group bg-white rounded-2xl p-6 border border-stone-200 hover:border-stone-300 transition-colors duration-200">
       {/* Company Header */}
       <div className="flex items-start gap-4 mb-6">
         {/* Company Logo */}
         <div className="flex-shrink-0">
-          <div
-            className={`w-16 h-16 bg-gradient-to-r ${experience.color} rounded-xl flex items-center justify-center shadow-lg overflow-hidden`}
-          >
+          <div className="w-16 h-16 rounded-xl flex items-center justify-center border border-stone-200 overflow-hidden">
             {experience.logo &&
             experience.logo !== "/company-placeholder.svg" ? (
               <Image
@@ -170,29 +192,31 @@ const Work = () => {
                 className="w-full h-full object-cover rounded-xl"
               />
             ) : (
-              <Building className="w-8 h-8 text-white" />
+              <div className="w-full h-full bg-stone-100 flex items-center justify-center">
+                <Building className="w-8 h-8 text-stone-500" />
+              </div>
             )}
           </div>
         </div>
 
         {/* Company Info */}
         <div className="flex-1 min-w-0">
-          <h3 className="font-bold text-xl text-white mb-1 group-hover:text-blue-300 transition-colors">
+          <h3 className="font-bold text-xl text-stone-900 mb-1">
             {experience.position}
           </h3>
-          <p className="text-lg text-blue-400 font-medium mb-2">
+          <p className="text-lg text-slate-700 font-medium mb-2">
             {experience.company}
           </p>
-          <div className="flex flex-wrap gap-2 text-sm text-zinc-400">
-            <span className="flex items-center gap-1 bg-zinc-800/50 px-2 py-1 rounded-md">
+          <div className="flex flex-wrap gap-2 text-sm text-stone-500">
+            <span className="flex items-center gap-1 bg-stone-100 px-2 py-1 rounded-md border border-stone-200">
               <Briefcase className="w-3 h-3" />
               {experience.type}
             </span>
-            <span className="flex items-center gap-1 bg-zinc-800/50 px-2 py-1 rounded-md">
+            <span className="flex items-center gap-1 bg-stone-100 px-2 py-1 rounded-md border border-stone-200">
               <Calendar className="w-3 h-3" />
               {experience.duration}
             </span>
-            <span className="flex items-center gap-1 bg-zinc-800/50 px-2 py-1 rounded-md">
+            <span className="flex items-center gap-1 bg-stone-100 px-2 py-1 rounded-md border border-stone-200">
               <MapPin className="w-3 h-3" />
               {experience.location}
             </span>
@@ -201,13 +225,13 @@ const Work = () => {
       </div>
 
       {/* Description */}
-      <p className="text-zinc-300 leading-relaxed mb-6">
+      <p className="text-stone-600 leading-relaxed mb-6">
         {experience.description}
       </p>
 
       {/* Skills/Tech Stack */}
       <div className="space-y-3">
-        <h4 className="text-sm font-medium text-zinc-400 uppercase tracking-wide">
+        <h4 className="text-sm font-medium text-stone-500 uppercase tracking-wide">
           {isTech ? "Tech Stack" : "Key Skills"}
         </h4>
         <div className="flex flex-wrap gap-2">
@@ -215,7 +239,7 @@ const Work = () => {
             (skill: string, index: number) => (
               <span
                 key={index}
-                className={`px-3 py-1 bg-gradient-to-r ${experience.color} bg-opacity-10 border border-current border-opacity-20 rounded-full text-sm font-medium text-white hover:bg-opacity-20 transition-all duration-300`}
+                className="px-3 py-1 bg-stone-100 border border-stone-200 rounded-full text-sm font-medium text-stone-700"
               >
                 {skill}
               </span>
@@ -229,27 +253,27 @@ const Work = () => {
   return (
     <section
       id="work"
-      className="py-16 md:py-24 bg-gradient-to-b from-black to-zinc-950"
+      className="py-16 md:py-24 bg-white"
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-stone-900">
             Work Experience
           </h2>
-          <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
+          <p className="text-stone-500 text-lg max-w-2xl mx-auto">
             Where I&apos;ve worked
           </p>
         </div>
 
         {/* Tab Navigation */}
         <div className="flex justify-center mb-12">
-          <div className="bg-zinc-900/50 backdrop-blur-sm rounded-full p-1 border border-zinc-800">
+          <div className="bg-stone-100 rounded-2xl p-1 border border-stone-200 flex flex-wrap justify-center gap-1">
             <button
               onClick={() => setActiveTab("tech")}
-              className={`px-8 py-3 rounded-full transition-all duration-300 font-medium ${
+              className={`px-6 py-3 rounded-xl transition-colors duration-200 font-medium ${
                 activeTab === "tech"
-                  ? "bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg"
-                  : "text-zinc-400 hover:text-white"
+                  ? "bg-slate-700 text-white shadow-sm"
+                  : "text-stone-500 hover:text-stone-900"
               }`}
             >
               <span className="flex items-center gap-2">
@@ -259,15 +283,28 @@ const Work = () => {
             </button>
             <button
               onClick={() => setActiveTab("parttime")}
-              className={`px-8 py-3 rounded-full transition-all duration-300 font-medium ${
+              className={`px-6 py-3 rounded-xl transition-colors duration-200 font-medium ${
                 activeTab === "parttime"
-                  ? "bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg"
-                  : "text-zinc-400 hover:text-white"
+                  ? "bg-slate-700 text-white shadow-sm"
+                  : "text-stone-500 hover:text-stone-900"
               }`}
             >
               <span className="flex items-center gap-2">
                 <Clock className="w-4 h-4" />
                 Non-Tech Experience
+              </span>
+            </button>
+            <button
+              onClick={() => setActiveTab("leadership")}
+              className={`px-6 py-3 rounded-xl transition-colors duration-200 font-medium ${
+                activeTab === "leadership"
+                  ? "bg-slate-700 text-white shadow-sm"
+                  : "text-stone-500 hover:text-stone-900"
+              }`}
+            >
+              <span className="flex items-center gap-2">
+                <Award className="w-4 h-4" />
+                Leadership
               </span>
             </button>
           </div>
@@ -289,12 +326,12 @@ const Work = () => {
                 ))
               ) : (
                 <div className="text-center py-16">
-                  <div className="bg-zinc-900/50 backdrop-blur-sm rounded-2xl p-8 border border-zinc-800">
-                    <Briefcase className="w-16 h-16 text-zinc-500 mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold text-white mb-2">
+                  <div className="bg-white rounded-2xl p-8 border border-stone-200">
+                    <Briefcase className="w-16 h-16 text-stone-400 mx-auto mb-4" />
+                    <h3 className="text-xl font-semibold text-stone-900 mb-2">
                       Ready for New Opportunities
                     </h3>
-                    <p className="text-zinc-400 max-w-md mx-auto">
+                    <p className="text-stone-500 max-w-md mx-auto">
                       I&apos;m actively seeking internships, co-op positions,
                       and entry-level roles where I can apply my skills and grow
                       as a developer.
@@ -308,6 +345,20 @@ const Work = () => {
           {activeTab === "parttime" && (
             <div className="space-y-8">
               {partTimeExperience.map((experience, index) => (
+                <div
+                  key={experience.id}
+                  className="animate-fade-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <ExperienceCard experience={experience} isTech={false} />
+                </div>
+              ))}
+            </div>
+          )}
+
+          {activeTab === "leadership" && (
+            <div className="space-y-8">
+              {leadershipExperience.map((experience, index) => (
                 <div
                   key={experience.id}
                   className="animate-fade-in"

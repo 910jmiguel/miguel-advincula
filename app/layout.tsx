@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { ThemeProvider } from "./providers/theme-provider";
 
-const inter = Inter({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -22,10 +23,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="dark scroll-smooth"
-      style={{ colorScheme: "dark" }}
+      className="scroll-smooth"
+      style={{ colorScheme: "light" }}
     >
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${plusJakartaSans.className} antialiased`}>
         <ThemeProvider>
           <Navbar />
           {children}

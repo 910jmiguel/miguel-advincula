@@ -14,6 +14,7 @@ import {
   Download,
   Calendar,
 } from "lucide-react";
+import { TikTokIcon } from "@/app/ui/icons";
 
 const Contact = () => {
   const [copied, setCopied] = useState<string | null>(null);
@@ -68,17 +69,13 @@ const Contact = () => {
       value: "910jmiguel@gmail.com",
       href: "mailto:910jmiguel@gmail.com",
       copyText: "910jmiguel@gmail.com",
-      color: "from-blue-500 to-cyan-500",
-      hoverColor: "hover:shadow-blue-500/20",
     },
     {
       icon: <Linkedin className="w-6 h-6" />,
       title: "LinkedIn",
       value: "Miguel Advincula",
-      href: "https://www.linkedin.com/in/miguel-advincula-691ba0279/",
-      copyText: "https://www.linkedin.com/in/miguel-advincula-691ba0279/",
-      color: "from-blue-600 to-blue-400",
-      hoverColor: "hover:shadow-blue-600/20",
+      href: "https://www.linkedin.com/in/910jmiguel/",
+      copyText: "https://www.linkedin.com/in/910jmiguel/",
     },
     {
       icon: <Github className="w-6 h-6" />,
@@ -86,8 +83,6 @@ const Contact = () => {
       value: "@910jmiguel",
       href: "https://github.com/910jmiguel",
       copyText: "https://github.com/910jmiguel",
-      color: "from-gray-600 to-gray-400",
-      hoverColor: "hover:shadow-gray-500/20",
     },
     {
       icon: <MapPin className="w-6 h-6" />,
@@ -95,17 +90,20 @@ const Contact = () => {
       value: "Toronto, Ontario, Canada",
       href: "https://maps.google.com/?q=Toronto,Ontario,Canada",
       copyText: "Toronto, Ontario, Canada",
-      color: "from-green-500 to-emerald-500",
-      hoverColor: "hover:shadow-green-500/20",
     },
     {
       icon: <Instagram className="w-6 h-6" />,
       title: "Instagram",
-      value: "@miguel.advincula_",
-      href: "https://www.instagram.com/miguel.advincula_/",
-      copyText: "https://www.instagram.com/miguel.advincula_/",
-      color: "from-pink-500 to-purple-500",
-      hoverColor: "hover:shadow-pink-500/20",
+      value: "@jmiguel.adv",
+      href: "https://www.instagram.com/jmiguel.adv",
+      copyText: "https://www.instagram.com/jmiguel.adv",
+    },
+    {
+      icon: <TikTokIcon className="w-6 h-6" size={24} />,
+      title: "TikTok",
+      value: "@jmiguel.adv",
+      href: "https://www.tiktok.com/@jmiguel.adv",
+      copyText: "https://www.tiktok.com/@jmiguel.adv",
     },
   ];
 
@@ -114,14 +112,14 @@ const Contact = () => {
     return (
       <section
         id="contact"
-        className="py-16 md:py-24 bg-gradient-to-b from-black via-zinc-950 to-zinc-900 min-h-screen"
+        className="py-16 md:py-24 bg-stone-50 min-h-screen"
       >
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-stone-900">
               Contact
             </h2>
-            <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
+            <p className="text-stone-500 text-lg max-w-2xl mx-auto">
               Loading...
             </p>
           </div>
@@ -133,24 +131,24 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-16 md:py-24 bg-gradient-to-b from-black via-zinc-950 to-zinc-900 min-h-screen"
+      className="py-16 md:py-24 bg-stone-50 min-h-screen"
     >
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-stone-900">
             Contact
           </h2>
-          <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
-            Want to reach out? Here&apos;s how.
+          <p className="text-stone-500 text-lg max-w-2xl mx-auto">
+            Whether it&apos;s a project idea, a quick chat about tech, career advice, or mentorship — I&apos;m always happy to connect.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
           {/* Contact Methods */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-              <MessageSquare className="w-6 h-6 text-blue-400" />
+            <h3 className="text-2xl font-bold text-stone-900 mb-6 flex items-center gap-3">
+              <MessageSquare className="w-6 h-6 text-slate-700" />
               Get In Touch
             </h3>
 
@@ -158,21 +156,19 @@ const Contact = () => {
               {contactMethods.map((method, index) => (
                 <div
                   key={method.title}
-                  className="group bg-zinc-900/50 rounded-xl p-6 border border-zinc-800 hover:border-zinc-600 transition-colors duration-300"
+                  className="group bg-white rounded-xl p-6 border border-stone-200 hover:border-stone-300 transition-colors duration-200"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                      <div
-                        className={`p-3 bg-gradient-to-r ${method.color} rounded-lg shadow-lg ${method.hoverColor} transition-colors duration-300`}
-                      >
+                      <div className="p-3 bg-stone-100 rounded-lg text-stone-600">
                         {method.icon}
                       </div>
                       <div>
-                        <h4 className="text-white font-semibold mb-1">
+                        <h4 className="text-stone-900 font-semibold mb-1">
                           {method.title}
                         </h4>
-                        <p className="text-zinc-400 group-hover:text-zinc-300 transition-colors">
+                        <p className="text-stone-500 group-hover:text-stone-600 transition-colors">
                           {method.value}
                         </p>
                       </div>
@@ -183,13 +179,13 @@ const Contact = () => {
                         onClick={() =>
                           handleCopy(method.copyText, method.title)
                         }
-                        className="p-2 bg-zinc-800 hover:bg-zinc-700 rounded-lg transition-all duration-300 hover:scale-110"
+                        className="p-2 bg-stone-100 hover:bg-stone-200 rounded-lg transition-colors duration-200"
                         title={`Copy ${method.title}`}
                       >
                         {copied === method.title ? (
-                          <Check className="w-4 h-4 text-green-400" />
+                          <Check className="w-4 h-4 text-green-600" />
                         ) : (
-                          <Copy className="w-4 h-4 text-zinc-400" />
+                          <Copy className="w-4 h-4 text-stone-500" />
                         )}
                       </button>
                       <a
@@ -202,10 +198,10 @@ const Contact = () => {
                             ? "noopener noreferrer"
                             : undefined
                         }
-                        className="p-2 bg-zinc-800 hover:bg-zinc-700 rounded-lg transition-all duration-300 hover:scale-110"
+                        className="p-2 bg-stone-100 hover:bg-stone-200 rounded-lg transition-colors duration-200"
                         title={`Open ${method.title}`}
                       >
-                        <ExternalLink className="w-4 h-4 text-zinc-400" />
+                        <ExternalLink className="w-4 h-4 text-stone-500" />
                       </a>
                     </div>
                   </div>
@@ -214,26 +210,26 @@ const Contact = () => {
             </div>
 
             {/* Quick Actions */}
-            <div className="bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 backdrop-blur-sm rounded-xl p-6 border border-zinc-800 mt-8">
-              <h4 className="text-white font-semibold mb-4 flex items-center gap-2">
-                <Calendar className="w-5 h-5 text-blue-400" />
+            <div className="bg-stone-50 rounded-xl p-6 border border-stone-200 mt-8">
+              <h4 className="text-stone-900 font-semibold mb-4 flex items-center gap-2">
+                <Calendar className="w-5 h-5 text-slate-700" />
                 Quick Actions
               </h4>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href="/JMA_CS_Resume_Oct2025.pdf"
+                  href="/JMA_CS_Resume_Feb2026.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-blue-500 hover:bg-blue-400 text-white rounded-lg font-medium transition-colors duration-300"
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-medium transition-colors duration-200"
                 >
                   <Download className="w-4 h-4" />
                   Download Resume
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/miguel-advincula-691ba0279/"
+                  href="https://www.linkedin.com/in/910jmiguel/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white rounded-lg font-medium transition-all duration-300"
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-lg font-medium transition-colors duration-200 border border-stone-200"
                 >
                   <Linkedin className="w-4 h-4" />
                   LinkedIn Profile
@@ -244,8 +240,8 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-              <Send className="w-6 h-6 text-purple-400" />
+            <h3 className="text-2xl font-bold text-stone-900 mb-6 flex items-center gap-3">
+              <Send className="w-6 h-6 text-slate-700" />
               Send a Message
             </h3>
 
@@ -254,7 +250,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-zinc-400 mb-2"
+                    className="block text-sm font-medium text-stone-500 mb-2"
                   >
                     Name *
                   </label>
@@ -265,14 +261,14 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-zinc-900/50 border border-zinc-700 rounded-lg text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 bg-white border border-stone-300 rounded-lg text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent transition-colors duration-200"
                     placeholder="Your full name"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-zinc-400 mb-2"
+                    className="block text-sm font-medium text-stone-500 mb-2"
                   >
                     Email *
                   </label>
@@ -283,7 +279,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-zinc-900/50 border border-zinc-700 rounded-lg text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 bg-white border border-stone-300 rounded-lg text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent transition-colors duration-200"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -292,7 +288,7 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="subject"
-                  className="block text-sm font-medium text-zinc-400 mb-2"
+                  className="block text-sm font-medium text-stone-500 mb-2"
                 >
                   Subject
                 </label>
@@ -302,15 +298,15 @@ const Contact = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-zinc-900/50 border border-zinc-700 rounded-lg text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                  placeholder="What's this about?"
+                  className="w-full px-4 py-3 bg-white border border-stone-300 rounded-lg text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent transition-colors duration-200"
+                  placeholder="Project, mentorship, career chat, or something else?"
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-zinc-400 mb-2"
+                  className="block text-sm font-medium text-stone-500 mb-2"
                 >
                   Message *
                 </label>
@@ -321,14 +317,14 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 bg-zinc-900/50 border border-zinc-700 rounded-lg text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-vertical"
-                  placeholder="Tell me about your project, opportunity, or just say hello!"
+                  className="w-full px-4 py-3 bg-white border border-stone-300 rounded-lg text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent transition-colors duration-200 resize-vertical"
+                  placeholder="Tell me about your project, mentorship request, career question, or just say hello!"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full px-6 py-4 bg-blue-500 hover:bg-blue-400 text-white rounded-lg font-medium transition-colors duration-300"
+                className="w-full px-6 py-4 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-medium transition-colors duration-200"
               >
                 <span className="flex items-center justify-center gap-2">
                   <Send className="w-5 h-5" />
