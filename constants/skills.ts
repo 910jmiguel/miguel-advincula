@@ -46,12 +46,12 @@ const skillCategories: SkillCategory[] = [
 ];
 
 const softSkills = [
-  { name: "Problem Solving", icon: "🧩", description: "Analytical thinking and creative solutions" },
-  { name: "Team Collaboration", icon: "🤝", description: "Effective communication and teamwork" },
-  { name: "Leadership", icon: "👑", description: "Project management and team guidance" },
-  { name: "Adaptability", icon: "🔄", description: "Quick learning and adaptation to new technologies" },
-  { name: "Communication", icon: "💬", description: "Clear technical and business communication" },
-  { name: "Critical Thinking", icon: "🎯", description: "Strategic planning and decision making" },
+  { name: "Problem Solving", icon: "🧩", description: "Breaking problems into smaller pieces" },
+  { name: "Team Collaboration", icon: "🤝", description: "Working well with others on shared goals" },
+  { name: "Leadership", icon: "👑", description: "Guiding a team and keeping things on track" },
+  { name: "Adaptability", icon: "🔄", description: "Picking up new tools and stacks quickly" },
+  { name: "Communication", icon: "💬", description: "Explaining technical ideas clearly" },
+  { name: "Critical Thinking", icon: "🎯", description: "Thinking before building" },
 ];
 
 export default skillCategories;

@@ -1,7 +1,7 @@
 export const projects = [
   {
     id: 1,
-    title: "📉 Anti-Inflation",
+    title: "Anti-Inflation",
     description: "A web app that tracks and visualizes inflation trends, providing users with insights and tools to make informed financial decisions.",
     image: "/anti-inflation.png", 
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "React", "PostgreSQL", "NeonDB", "DrizzleORM", "BetterAuth"],
@@ -12,7 +12,7 @@ export const projects = [
   },
   {
     id: 2,
-    title: "🔐 LockedIn",
+    title: "LockedIn",
     description: "Building a student productivity dashboard to track assignments with a synced calendar, schedule courses, and stay focused using a Pomodoro timer.",
     image: "/project-placeholder.svg", 
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "React", "PostgreSQL", "NeonDB", "DrizzleORM", "BetterAuth"],
@@ -22,7 +22,7 @@ export const projects = [
   },
   {
     id: 3,
-    title: "🌎🤖 InteliEarth | GenAI Genesis 2025",
+    title: "InteliEarth | GenAI Genesis 2025",
     description: "An eco-friendly, self-hosted AI tutoring solution for students to provide personalized education while reducing CO₂ emissions.",
     image: "/genai.png",
     techStack: ["React", "Node.js", "Ollama", "LangChain", "FastAPI"],
@@ -32,7 +32,7 @@ export const projects = [
   },
   {
     id: 4,
-    title: "📚 YULearn | 🏆 3rd Place WINNER at BEST Startup Experience",
+    title: "YULearn | 3rd Place Winner — BEST Startup Experience",
     description: "(Startup Concept) An AI-powered platform to bridge the gap between academia and industry expectations for CS and SWE students.",
     image: "/yulearn.png",
     techStack: ["React", "Next.js", "NeonDB", "DrizzleORM", "PostgreSQL", "TypeScript"],
@@ -43,7 +43,7 @@ export const projects = [
   },
   {
     id: 5,
-    title: "🍁 Eh-conomy | HackCanada 2025",
+    title: "Eh-conomy | HackCanada 2025",
     description: "An app that discovers and promotes local Canadian farms and markets to encourage people to buy Canadian, due to the ongoing tariff war.",
     image: "/ehconomy.png",
     techStack: ["Next.js", "React", "Python", "Django", "Firebase"],

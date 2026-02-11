@@ -9,7 +9,6 @@ import {
   Plane,
   GraduationCap,
   Code2,
-  Heart,
 } from "lucide-react";
 
 const About = () => {
@@ -25,35 +24,31 @@ const About = () => {
       icon: <Camera className="w-8 h-8" />,
       title: "Photography & Videography",
       description:
-        "Capturing moments and creating visual stories through the lens",
+        "I shoot photos and videos — mostly street and travel stuff",
       color: "from-purple-500 to-pink-500",
     },
     {
       icon: <Video className="w-8 h-8" />,
       title: "Content Creation",
-      description:
-        "Creating engaging digital content and exploring new creative mediums",
+      description: "Making videos and experimenting with different formats",
       color: "from-blue-500 to-cyan-500",
     },
     {
       icon: <Utensils className="w-8 h-8" />,
       title: "Foodie",
-      description:
-        "Exploring different cuisines and discovering new flavors from around the world",
+      description: "Always looking for good food spots around the city",
       color: "from-orange-500 to-red-500",
     },
     {
       icon: <Plane className="w-8 h-8" />,
       title: "Travel",
-      description:
-        "Passionate about exploring new places and experiencing different cultures",
+      description: "I like seeing new places when I get the chance",
       color: "from-indigo-500 to-purple-500",
     },
     {
       icon: <Code2 className="w-8 h-8" />,
-      title: "Tech Innovation",
-      description:
-        "Always exploring emerging technologies and their potential applications",
+      title: "Tech",
+      description: "Messing around with new tools and frameworks",
       color: "from-cyan-500 to-blue-500",
     },
   ];
@@ -65,7 +60,7 @@ const About = () => {
     >
       <div className="container">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
             About Me
           </h2>
         </div>
@@ -75,16 +70,15 @@ const About = () => {
           <div className="bg-zinc-900/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
             <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
               {/* Profile Image */}
-              <div className="relative flex-shrink-0 group">
-                <div className="absolute -inset-6 bg-gradient-conic from-blue-500 via-purple-500 to-blue-500 rounded-full blur-2xl opacity-20 group-hover:opacity-40 animate-[spin_10s_linear_infinite] transition-opacity duration-500"></div>
-                <div className="absolute -inset-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-sm opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
-                <div className="relative w-56 h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-white/10 group-hover:border-white/20 transition-all duration-500 shadow-2xl">
+              <div className="relative flex-shrink-0">
+                <div className="absolute -inset-2 bg-blue-500/20 rounded-full blur-md"></div>
+                <div className="relative w-56 h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-white/10 shadow-2xl">
                   <Image
                     src="/miguel2.jpeg"
                     alt="Miguel Advincula"
                     width={256}
                     height={256}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover"
                     priority
                   />
                 </div>
@@ -93,29 +87,28 @@ const About = () => {
               {/* Profile Info */}
               <div className="flex-1 text-center lg:text-left space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="group bg-gradient-to-br from-zinc-800/60 to-zinc-900/60 rounded-xl p-5 text-center border border-zinc-700/50 hover:border-zinc-600/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10">
-                    <div className="text-2xl lg:text-3xl font-bold text-purple-400 group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-zinc-800/60 rounded-xl p-5 text-center border border-zinc-700/50">
+                    <div className="text-2xl lg:text-3xl font-bold text-purple-400">
                       Toronto
                     </div>
-                    <div className="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors mt-1">
+                    <div className="text-sm text-zinc-400 mt-1">
                       Ontario, Canada
                     </div>
                   </div>
-                  <div className="group bg-gradient-to-br from-zinc-800/60 to-zinc-900/60 rounded-xl p-5 text-center border border-zinc-700/50 hover:border-zinc-600/50 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/10">
-                    <div className="text-2xl lg:text-3xl font-bold text-green-400 group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-zinc-800/60 rounded-xl p-5 text-center border border-zinc-700/50">
+                    <div className="text-2xl lg:text-3xl font-bold text-green-400">
                       Full-Stack
                     </div>
-                    <div className="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors mt-1">
+                    <div className="text-sm text-zinc-400 mt-1">
                       Developer
                     </div>
                   </div>
                 </div>
 
                 <p className="text-zinc-300 leading-relaxed text-lg lg:text-xl max-w-2xl lg:max-w-none">
-                  Aspiring full-stack developer based in Toronto, currently
-                  studying Computer Science. Passionate about learning,
-                  experimenting with new technologies, and creating applications
-                  that make an impact.
+                  I like figuring out how things work and building stuff along
+                  the way. Currently in my 3rd year at York studying Computer
+                  Science.
                 </p>
               </div>
             </div>
@@ -129,31 +122,30 @@ const About = () => {
               <div className="p-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl shadow-lg shadow-blue-500/25 group-hover:shadow-blue-500/40 transition-all duration-300">
                 <GraduationCap className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-3xl lg:text-4xl font-bold text-transparent bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text">
+              <h3 className="text-3xl lg:text-4xl font-bold text-white">
                 Education
               </h3>
             </div>
 
             <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
               {/* York University Logo */}
-              <div className="flex-shrink-0 relative group">
-                <div className="absolute -inset-6 bg-gradient-to-r from-red-500/20 to-red-700/20 rounded-3xl blur-2xl group-hover:blur-3xl opacity-50 group-hover:opacity-70 transition-all duration-500"></div>
-                <div className="relative w-40 h-40 lg:w-48 lg:h-48 bg-gradient-to-br from-red-600 to-red-800 rounded-3xl flex items-center justify-center shadow-2xl group-hover:shadow-red-500/30 transition-all duration-500 border border-red-500/20">
+              <div className="flex-shrink-0 relative">
+                <div className="relative w-40 h-40 lg:w-48 lg:h-48 bg-red-900/40 rounded-3xl flex items-center justify-center shadow-xl border border-red-500/20">
                   <Image
                     src="/yorkulogo.jpg"
                     alt="York University Logo"
                     width={120}
                     height={120}
-                    className="w-24 h-24 lg:w-32 lg:h-32 object-contain transform group-hover:scale-110 transition-transform duration-500"
+                    className="w-24 h-24 lg:w-32 lg:h-32 object-contain"
                   />
                 </div>
               </div>
 
               <div className="flex-1 text-center lg:text-left space-y-4">
-                <h4 className="text-3xl lg:text-3xl font-bold text-transparent bg-gradient-to-r from-white via-red-100 to-white bg-clip-text">
+                <h4 className="text-3xl lg:text-3xl font-bold text-white">
                   York University, Lassonde School of Engineering
                 </h4>
-                <p className="text-xl lg:text-2xl bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent font-semibold">
+                <p className="text-xl lg:text-2xl text-blue-400 font-semibold">
                   Bachelor of Arts (Specialized Honours) - Computer Science
                 </p>
                 <p className="text-lg lg:text-xl text-purple-400 font-medium">
@@ -179,13 +171,11 @@ const About = () => {
         {/* Interests Grid */}
         <div className="mb-16">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
-              <Heart className="w-8 h-8 text-red-400" />
-              Beyond the Code
+            <h3 className="text-3xl font-bold text-white mb-4">
+              Interests
             </h3>
             <p className="text-zinc-400 max-w-2xl mx-auto">
-              The passions and interests that fuel my creativity and drive for
-              innovation
+              Some things I&apos;m into outside of coding
             </p>
           </div>
 
@@ -193,7 +183,7 @@ const About = () => {
             {interests.map((interest, index) => (
               <div
                 key={interest.title}
-                className="group relative bg-zinc-900/50 backdrop-blur-sm rounded-2xl p-6 border border-zinc-800 hover:border-zinc-600 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-2"
+                className="group relative bg-zinc-900/50 rounded-2xl p-6 border border-zinc-800 hover:border-zinc-600 transition-colors duration-300"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Gradient Background */}
@@ -204,7 +194,7 @@ const About = () => {
                 {/* Content */}
                 <div className="relative z-10">
                   <div
-                    className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${interest.color} mb-4 group-hover:scale-110 transition-transform duration-300`}
+                    className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${interest.color} mb-4`}
                   >
                     <div className="text-white">{interest.icon}</div>
                   </div>
@@ -220,32 +210,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 backdrop-blur-sm rounded-3xl p-8 border border-zinc-800 hover:border-zinc-600 transition-all duration-500">
-            <h3 className="text-3xl font-bold mb-4 text-white">
-              Let&apos;s Connect!
-            </h3>
-            <p className="text-zinc-400 max-w-2xl mx-auto mb-8 text-lg leading-relaxed">
-              I&apos;m always excited to discuss new opportunities, collaborate
-              on innovative projects, or simply chat about technology,
-              creativity, and life experiences.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="group px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/25">
-                <span className="flex items-center justify-center gap-2">
-                  Get In Touch
-                  <span className="group-hover:translate-x-1 transition-transform">
-                    →
-                  </span>
-                </span>
-              </button>
-              <button className="px-8 py-4 border border-zinc-600 text-zinc-300 rounded-xl font-medium hover:border-zinc-500 hover:text-white hover:bg-zinc-800/50 transition-all duration-300">
-                View My Work
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

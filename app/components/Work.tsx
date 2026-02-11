@@ -7,7 +7,6 @@ import {
   MapPin,
   Building,
   Clock,
-  Users,
   Code2,
 } from "lucide-react";
 
@@ -153,13 +152,13 @@ const Work = () => {
     experience: Experience;
     isTech?: boolean;
   }) => (
-    <div className="group bg-zinc-900/50 backdrop-blur-sm rounded-2xl p-6 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-2">
+    <div className="group bg-zinc-900/50 rounded-2xl p-6 border border-zinc-800 hover:border-zinc-700 transition-colors duration-300">
       {/* Company Header */}
       <div className="flex items-start gap-4 mb-6">
         {/* Company Logo */}
         <div className="flex-shrink-0">
           <div
-            className={`w-16 h-16 bg-gradient-to-r ${experience.color} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 overflow-hidden`}
+            className={`w-16 h-16 bg-gradient-to-r ${experience.color} rounded-xl flex items-center justify-center shadow-lg overflow-hidden`}
           >
             {experience.logo &&
             experience.logo !== "/company-placeholder.svg" ? (
@@ -234,12 +233,11 @@ const Work = () => {
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
             Work Experience
           </h2>
           <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
-            My professional journey and experiences that have shaped my skills
-            and perspective
+            Where I&apos;ve worked
           </p>
         </div>
 
@@ -322,36 +320,6 @@ const Work = () => {
           )}
         </div>
 
-        {/* Call to Action */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-green-500/10 backdrop-blur-sm rounded-2xl p-8 border border-zinc-800">
-            <h3 className="text-2xl font-bold mb-4 text-white">
-              Let&apos;s Work Together
-            </h3>
-            <p className="text-zinc-400 max-w-2xl mx-auto mb-6">
-              I&apos;m always open to new opportunities and collaborations.
-              Whether it&apos;s an internship, co-op position, or project
-              collaboration, I&apos;d love to hear from you.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="group px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/25">
-                <span className="flex items-center justify-center gap-2">
-                  <Briefcase className="w-4 h-4" />
-                  View Resume
-                  <span className="group-hover:translate-x-1 transition-transform">
-                    →
-                  </span>
-                </span>
-              </button>
-              <button className="px-6 py-3 border border-zinc-600 text-zinc-300 rounded-lg font-medium hover:border-zinc-500 hover:text-white hover:bg-zinc-800/50 transition-all duration-300">
-                <span className="flex items-center justify-center gap-2">
-                  <Users className="w-4 h-4" />
-                  Get In Touch
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -118,8 +118,8 @@ const Contact = () => {
       >
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-              Connect with Me
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+              Contact
             </h2>
             <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
               Loading...
@@ -138,13 +138,11 @@ const Contact = () => {
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-            Connect with Me
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+            Contact
           </h2>
           <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
-            I&apos;m always excited to discuss new opportunities, collaborate on
-            projects, or simply chat about technology and innovation. Let&apos;s
-            connect!
+            Want to reach out? Here&apos;s how.
           </p>
         </div>
 
@@ -160,13 +158,13 @@ const Contact = () => {
               {contactMethods.map((method, index) => (
                 <div
                   key={method.title}
-                  className="group bg-zinc-900/50 backdrop-blur-sm rounded-xl p-6 border border-zinc-800 hover:border-zinc-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                  className="group bg-zinc-900/50 rounded-xl p-6 border border-zinc-800 hover:border-zinc-600 transition-colors duration-300"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
                       <div
-                        className={`p-3 bg-gradient-to-r ${method.color} rounded-lg shadow-lg ${method.hoverColor} transition-all duration-300 group-hover:scale-110`}
+                        className={`p-3 bg-gradient-to-r ${method.color} rounded-lg shadow-lg ${method.hoverColor} transition-colors duration-300`}
                       >
                         {method.icon}
                       </div>
@@ -226,7 +224,7 @@ const Contact = () => {
                   href="/JMA_CS_Resume_Oct2025.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-blue-500 hover:bg-blue-400 text-white rounded-lg font-medium transition-colors duration-300"
                 >
                   <Download className="w-4 h-4" />
                   Download Resume
@@ -330,35 +328,17 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full group px-6 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
+                className="w-full px-6 py-4 bg-blue-500 hover:bg-blue-400 text-white rounded-lg font-medium transition-colors duration-300"
               >
                 <span className="flex items-center justify-center gap-2">
                   <Send className="w-5 h-5" />
                   Send Message
-                  <span className="group-hover:translate-x-1 transition-transform">
-                    →
-                  </span>
                 </span>
               </button>
             </form>
           </div>
         </div>
 
-        {/* Footer Message */}
-        <div className="text-center">
-          <div className="bg-zinc-900/30 backdrop-blur-sm rounded-2xl p-8 border border-zinc-800">
-            <h3 className="text-2xl font-bold mb-4 text-white">
-              Let&apos;s Build Something Amazing Together
-            </h3>
-            <p className="text-zinc-400 max-w-3xl mx-auto text-lg leading-relaxed">
-              Whether you&apos;re looking for a dedicated developer for your
-              team, have an exciting project idea, or want to discuss the latest
-              in technology, I&apos;m always open to meaningful conversations.
-              Let&apos;s connect and explore how we can create something
-              impactful together.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -57,12 +57,11 @@ const Skills = () => {
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-            Skills & Expertise
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+            Skills
           </h2>
           <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
-            A comprehensive overview of my technical proficiencies and
-            professional capabilities
+            What I work with
           </p>
         </div>
 
@@ -128,18 +127,6 @@ const Skills = () => {
           </div>
         )}
 
-        {/* Additional Info */}
-        <div className="mt-16 text-center">
-          <div className="bg-zinc-900/30 backdrop-blur-sm rounded-2xl p-8 border border-zinc-800">
-            <h3 className="text-xl font-semibold mb-4">Always Learning</h3>
-            <p className="text-zinc-400 max-w-3xl mx-auto">
-              Technology evolves rapidly, and I&apos;m committed to continuous
-              learning. Currently exploring advanced AI/ML concepts, cloud
-              architecture patterns, and emerging web technologies to stay at
-              the forefront of software development.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );

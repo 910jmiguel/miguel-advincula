@@ -33,16 +33,12 @@ const Hero = () => {
       }`}
     >
       {/* Left Side */}
-      <div className="flex items-center justify-center p-8 bg-gradient-to-b from-black to-zinc-950 min-h-screen">
+      <div className="flex items-center justify-center p-8 bg-black min-h-screen">
         <div className="flex flex-col items-center gap-4 pt-16 lg:pt-0">
           {/* Profile Picture */}
           <div className="flex items-center justify-center mb-4">
             <div className="relative">
-              {/* Gradient background layers */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 rounded-full blur-lg opacity-75 animate-pulse"></div>
-              <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-400 rounded-full blur-md opacity-60"></div>
-
-              {/* Profile picture */}
+              <div className="absolute -inset-2 bg-blue-500/20 rounded-full blur-md"></div>
               <div className="relative">
                 <Image
                   src="/miguel.jpeg"
@@ -58,8 +54,12 @@ const Hero = () => {
       </div>
 
       {/* Right Side */}
-      <div className="relative flex flex-col bg-gradient-to-b from-black to-zinc-950 min-h-screen p-8">
+      <div className="relative flex flex-col bg-black min-h-screen p-8">
         <div className="flex-1 flex flex-col items-center lg:items-start justify-center pt-16 lg:pt-0">
+          {/* v2 teaser */}
+          <div className="mb-6 px-4 py-2 border border-zinc-700 rounded-full text-sm text-zinc-400 text-center lg:text-left">
+            v2 coming soon — full revamp in progress
+          </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 text-center lg:text-left">
             Miguel Advincula
           </h1>
@@ -67,9 +67,8 @@ const Hero = () => {
             Computer Science Student | AI & Full Stack Developer
           </h3>
           <p className="text-lg text-zinc-400 max-w-lg mb-8 text-center lg:text-left">
-            Hi there! 👋
-            <br></br>
-            Welcome to my portfolio! Scroll down to see more.
+            CS student at York. I build things for the web and tinker with AI on
+            the side.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button
@@ -97,7 +96,7 @@ const Hero = () => {
               href="https://github.com/910jmiguel"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-center w-12 h-12 rounded-full bg-zinc-800/50 border border-zinc-700/50 hover:bg-zinc-700/50 hover:border-zinc-600 transition-all duration-300 hover:scale-110"
+              className="group flex items-center justify-center w-12 h-12 rounded-full bg-zinc-800/50 border border-zinc-700/50 hover:bg-zinc-700/50 hover:border-zinc-600 transition-colors duration-300"
               aria-label="Visit Miguel's GitHub profile"
             >
               <Github
@@ -109,7 +108,7 @@ const Hero = () => {
               href="https://www.linkedin.com/in/miguel-advincula-691ba0279/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-center w-12 h-12 rounded-full bg-zinc-800/50 border border-zinc-700/50 hover:bg-zinc-700/50 hover:border-zinc-600 transition-all duration-300 hover:scale-110"
+              className="group flex items-center justify-center w-12 h-12 rounded-full bg-zinc-800/50 border border-zinc-700/50 hover:bg-zinc-700/50 hover:border-zinc-600 transition-colors duration-300"
               aria-label="Visit Miguel's LinkedIn profile"
             >
               <Linkedin

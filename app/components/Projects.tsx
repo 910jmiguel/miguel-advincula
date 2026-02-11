@@ -7,7 +7,6 @@ import {
   Code2,
   Folder,
   Filter,
-  Star,
 } from "lucide-react";
 import { projects, projectCategories } from "../../constants/projects";
 
@@ -33,7 +32,7 @@ const Projects = () => {
       : projects.filter((project) => project.category === selectedCategory);
 
   const ProjectCard = ({ project }: { project: Project }) => (
-    <div className="group bg-zinc-900/50 backdrop-blur-sm rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-2">
+    <div className="group bg-zinc-900/50 rounded-2xl overflow-hidden border border-zinc-800 hover:border-zinc-700 transition-colors duration-300">
       {/* Project Image */}
       <div className="relative h-48 overflow-hidden">
         <div
@@ -149,12 +148,11 @@ const Projects = () => {
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-            My Projects
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+            Projects
           </h2>
           <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
-            A collection of projects that showcase my skills and passion for
-            development
+            Things I&apos;ve built
           </p>
         </div>
 
@@ -216,43 +214,19 @@ const Projects = () => {
           )}
         </div>
 
-        {/* Call to Action */}
         <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-green-500/10 backdrop-blur-sm rounded-2xl p-8 border border-zinc-800 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4 text-white">
-              More Projects Coming Soon
-            </h3>
-            <p className="text-zinc-400 max-w-2xl mx-auto mb-6">
-              I&apos;m constantly working on new projects and learning new
-              technologies. Check out my GitHub for the latest updates and
-              contributions.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://github.com/910jmiguel"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
-              >
-                <span className="flex items-center justify-center gap-2">
-                  <Github className="w-4 h-4" />
-                  View GitHub Profile
-                  <span className="group-hover:translate-x-1 transition-transform">
-                    →
-                  </span>
-                </span>
-              </a>
-              <a
-                href="#contact"
-                className="px-6 py-3 border border-zinc-600 text-zinc-300 rounded-lg font-medium hover:border-zinc-500 hover:text-white hover:bg-zinc-800/50 transition-all duration-300"
-              >
-                <span className="flex items-center justify-center gap-2">
-                  <Star className="w-4 h-4" />
-                  Let&apos;s Collaborate
-                </span>
-              </a>
-            </div>
-          </div>
+          <p className="text-zinc-400 mb-4">
+            More on my GitHub.
+          </p>
+          <a
+            href="https://github.com/910jmiguel"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-zinc-800 hover:bg-zinc-700 text-white rounded-lg font-medium transition-colors duration-300"
+          >
+            <Github className="w-4 h-4" />
+            GitHub Profile
+          </a>
         </div>
       </div>
     </section>
