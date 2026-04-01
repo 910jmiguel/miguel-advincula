@@ -9,6 +9,7 @@ import {
   Filter,
 } from "lucide-react";
 import { projects, projectCategories } from "../../constants/projects";
+import { useReveal } from "@/app/hooks/useReveal";
 
 interface Project {
   id: number;
@@ -24,15 +25,16 @@ interface Project {
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const headerRef = useReveal();
+  const gridRef = useReveal(0.05);
 
-  // Filter projects based on selected category
   const filteredProjects =
     selectedCategory === "All"
       ? projects
       : projects.filter((project) => project.category === selectedCategory);
 
   const ProjectCard = ({ project }: { project: Project }) => (
-    <div className="group bg-white rounded-2xl overflow-hidden border border-stone-200 hover:border-stone-300 transition-colors duration-200">
+    <div className="group bg-white rounded-2xl overflow-hidden border border-stone-200 card-lift">
       {/* Project Image */}
       <div className="relative h-48 overflow-hidden">
         {project.image && project.image !== "/project-placeholder.svg" ? (
@@ -43,19 +45,18 @@ const Projects = () => {
             className="object-cover transition-transform duration-500 group-hover:scale-110"
           />
         ) : (
-          <div className="w-full h-full bg-stone-100 flex items-center justify-center">
-            <Code2 className="w-16 h-16 text-stone-400" />
+          <div className="w-full h-full flex items-center justify-center" style={{ background: 'var(--copper-subtle)' }}>
+            <Code2 className="w-16 h-16" style={{ color: 'var(--copper-light)' }} />
           </div>
         )}
 
-        {/* Overlay with action buttons */}
         <div className="absolute inset-0 bg-stone-900/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
           {project.githubUrl && (
             <a
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-white/80 hover:bg-white rounded-full transition-colors duration-200 text-stone-700"
+              className="p-3 bg-white/90 hover:bg-white rounded-full transition-colors duration-200 text-stone-700"
             >
               <Github className="w-5 h-5" />
             </a>
@@ -65,22 +66,20 @@ const Projects = () => {
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-white/80 hover:bg-white rounded-full transition-colors duration-200 text-stone-700"
+              className="p-3 bg-white/90 hover:bg-white rounded-full transition-colors duration-200 text-stone-700"
             >
               <ExternalLink className="w-5 h-5" />
             </a>
           )}
         </div>
 
-        {/* Category Badge */}
         <div className="absolute top-4 left-4">
-          <span className="px-3 py-1 bg-white border border-stone-200 rounded-full text-xs font-medium text-stone-700">
+          <span className="px-3 py-1 bg-white/90 backdrop-blur-sm border border-stone-200 rounded-full text-xs font-medium text-stone-700">
             {project.category}
           </span>
         </div>
       </div>
 
-      {/* Project Info */}
       <div className="p-6">
         <h3 className="font-bold text-xl text-stone-900 mb-2">
           {project.title}
@@ -90,7 +89,6 @@ const Projects = () => {
           {project.description}
         </p>
 
-        {/* Tech Stack */}
         <div className="space-y-3 mb-4">
           <h4 className="text-xs font-medium text-stone-500 uppercase tracking-wide">
             Tech Stack
@@ -99,7 +97,12 @@ const Projects = () => {
             {project.techStack.map((tech: string, index: number) => (
               <span
                 key={index}
-                className="px-2 py-1 bg-stone-100 border border-stone-200 rounded-md text-xs font-medium text-stone-600"
+                className="px-2 py-1 rounded-md text-xs font-medium border"
+                style={{
+                  background: 'var(--copper-subtle)',
+                  borderColor: 'var(--copper-muted)',
+                  color: 'var(--copper-dark)',
+                }}
               >
                 {tech}
               </span>
@@ -107,7 +110,6 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* Action Buttons */}
         <div className="flex gap-2 pt-4 border-t border-stone-200">
           {project.githubUrl && (
             <a
@@ -125,7 +127,8 @@ const Projects = () => {
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors duration-200 text-sm font-medium"
+              className="flex-1 flex items-center justify-center gap-2 px-3 py-2 text-white rounded-lg transition-all duration-200 text-sm font-medium hover:shadow-md"
+              style={{ background: 'var(--copper)' }}
             >
               <ExternalLink className="w-4 h-4" />
               Live Demo
@@ -137,13 +140,11 @@ const Projects = () => {
   );
 
   return (
-    <section
-      id="projects"
-      className="py-16 md:py-24 bg-stone-50"
-    >
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-stone-900">
+    <section id="projects" className="py-20 md:py-32 bg-stone-50 grain relative">
+      <div className="container mx-auto px-4 relative z-10">
+        <div ref={headerRef} className="reveal text-center mb-16">
+          <div className="accent-line mx-auto mb-6" />
+          <h2 className="font-display text-4xl md:text-6xl font-bold mb-4 text-stone-900 tracking-tight">
             Projects
           </h2>
           <p className="text-stone-500 text-lg max-w-2xl mx-auto">
@@ -153,17 +154,18 @@ const Projects = () => {
 
         {/* Category Filter */}
         <div className="flex justify-center mb-12">
-          <div className="bg-stone-100 rounded-2xl p-2 border border-stone-200 overflow-x-auto">
+          <div className="bg-white rounded-2xl p-2 border border-stone-200 overflow-x-auto shadow-sm">
             <div className="flex gap-2">
               {projectCategories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-xl transition-colors duration-200 font-medium whitespace-nowrap text-sm ${
+                  className={`px-4 py-2 rounded-xl transition-all duration-200 font-medium whitespace-nowrap text-sm ${
                     selectedCategory === category
-                      ? "bg-slate-700 text-white shadow-sm"
-                      : "text-stone-500 hover:text-stone-900 hover:bg-stone-200"
+                      ? "text-white shadow-sm"
+                      : "text-stone-500 hover:text-stone-900 hover:bg-stone-100"
                   }`}
+                  style={selectedCategory === category ? { background: 'var(--copper)' } : {}}
                 >
                   <span className="flex items-center gap-2">
                     {category === "All" ? (
@@ -180,7 +182,7 @@ const Projects = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="max-w-7xl mx-auto">
+        <div ref={gridRef} className="reveal max-w-7xl mx-auto">
           {filteredProjects.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProjects.map((project, index) => (
@@ -217,7 +219,7 @@ const Projects = () => {
             href="https://github.com/910jmiguel"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-lg font-medium transition-colors duration-200 border border-stone-200"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white hover:bg-stone-100 text-stone-700 rounded-lg font-medium transition-all duration-200 border border-stone-200 hover:shadow-md"
           >
             <Github className="w-4 h-4" />
             GitHub Profile

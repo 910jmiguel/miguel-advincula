@@ -15,6 +15,7 @@ import {
   Calendar,
 } from "lucide-react";
 import { TikTokIcon } from "@/app/ui/icons";
+import { useReveal } from "@/app/hooks/useReveal";
 
 const Contact = () => {
   const [copied, setCopied] = useState<string | null>(null);
@@ -25,6 +26,9 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+
+  const headerRef = useReveal();
+  const contentRef = useReveal(0.1);
 
   useEffect(() => {
     setMounted(true);
@@ -54,7 +58,6 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!mounted) return;
-    // Create mailto link with form data
     const subject = encodeURIComponent(formData.subject || "Portfolio Contact");
     const body = encodeURIComponent(
       `Hi Miguel,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}\n\nBest regards,\n${formData.name}`
@@ -107,16 +110,15 @@ const Contact = () => {
     },
   ];
 
-  // Prevent hydration mismatch by not rendering interactive elements on server
   if (!mounted) {
     return (
       <section
         id="contact"
-        className="py-16 md:py-24 bg-stone-50 min-h-screen"
+        className="py-20 md:py-32 bg-stone-50 min-h-screen"
       >
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-stone-900">
+            <h2 className="font-display text-4xl md:text-6xl font-bold mb-4 text-stone-900">
               Contact
             </h2>
             <p className="text-stone-500 text-lg max-w-2xl mx-auto">
@@ -131,12 +133,13 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-16 md:py-24 bg-stone-50 min-h-screen"
+      className="py-20 md:py-32 bg-stone-50 grain relative min-h-screen"
     >
-      <div className="container mx-auto px-4 max-w-6xl">
+      <div className="container mx-auto px-4 max-w-6xl relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-stone-900">
+        <div ref={headerRef} className="reveal text-center mb-16">
+          <div className="accent-line mx-auto mb-6" />
+          <h2 className="font-display text-4xl md:text-6xl font-bold mb-4 text-stone-900 tracking-tight">
             Contact
           </h2>
           <p className="text-stone-500 text-lg max-w-2xl mx-auto">
@@ -144,11 +147,13 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div ref={contentRef} className="reveal grid lg:grid-cols-2 gap-12 mb-16">
           {/* Contact Methods */}
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-stone-900 mb-6 flex items-center gap-3">
-              <MessageSquare className="w-6 h-6 text-slate-700" />
+              <div className="p-2 rounded-lg" style={{ background: 'var(--copper-muted)' }}>
+                <MessageSquare className="w-5 h-5" style={{ color: 'var(--copper)' }} />
+              </div>
               Get In Touch
             </h3>
 
@@ -156,19 +161,19 @@ const Contact = () => {
               {contactMethods.map((method, index) => (
                 <div
                   key={method.title}
-                  className="group bg-white rounded-xl p-6 border border-stone-200 hover:border-stone-300 transition-colors duration-200"
+                  className="group bg-white rounded-xl p-5 border border-stone-200 card-lift"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                      <div className="p-3 bg-stone-100 rounded-lg text-stone-600">
+                      <div className="p-3 rounded-lg transition-colors duration-300" style={{ background: 'var(--copper-subtle)', color: 'var(--copper)' }}>
                         {method.icon}
                       </div>
                       <div>
-                        <h4 className="text-stone-900 font-semibold mb-1">
+                        <h4 className="text-stone-900 font-semibold mb-0.5">
                           {method.title}
                         </h4>
-                        <p className="text-stone-500 group-hover:text-stone-600 transition-colors">
+                        <p className="text-stone-500 text-sm group-hover:text-stone-600 transition-colors">
                           {method.value}
                         </p>
                       </div>
@@ -210,9 +215,9 @@ const Contact = () => {
             </div>
 
             {/* Quick Actions */}
-            <div className="bg-stone-50 rounded-xl p-6 border border-stone-200 mt-8">
+            <div className="rounded-xl p-6 border mt-8" style={{ background: 'var(--copper-subtle)', borderColor: 'var(--copper-muted)' }}>
               <h4 className="text-stone-900 font-semibold mb-4 flex items-center gap-2">
-                <Calendar className="w-5 h-5 text-slate-700" />
+                <Calendar className="w-5 h-5" style={{ color: 'var(--copper)' }} />
                 Quick Actions
               </h4>
               <div className="flex flex-col sm:flex-row gap-3">
@@ -220,7 +225,8 @@ const Contact = () => {
                   href="/JMA_CS_Resume_Feb2026.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-medium transition-colors duration-200"
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-white rounded-lg font-medium transition-all duration-200 hover:shadow-lg"
+                  style={{ background: 'var(--copper)' }}
                 >
                   <Download className="w-4 h-4" />
                   Download Resume
@@ -229,7 +235,7 @@ const Contact = () => {
                   href="https://www.linkedin.com/in/910jmiguel/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-lg font-medium transition-colors duration-200 border border-stone-200"
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-white hover:bg-stone-100 text-stone-700 rounded-lg font-medium transition-colors duration-200 border border-stone-200"
                 >
                   <Linkedin className="w-4 h-4" />
                   LinkedIn Profile
@@ -241,11 +247,13 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-stone-900 mb-6 flex items-center gap-3">
-              <Send className="w-6 h-6 text-slate-700" />
+              <div className="p-2 rounded-lg" style={{ background: 'var(--copper-muted)' }}>
+                <Send className="w-5 h-5" style={{ color: 'var(--copper)' }} />
+              </div>
               Send a Message
             </h3>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label
@@ -261,7 +269,8 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-white border border-stone-300 rounded-lg text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent transition-colors duration-200"
+                    className="w-full px-4 py-3 bg-white border border-stone-300 rounded-lg text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200"
+                    style={{ '--tw-ring-color': 'var(--copper-light)' } as React.CSSProperties}
                     placeholder="Your full name"
                   />
                 </div>
@@ -279,7 +288,8 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-white border border-stone-300 rounded-lg text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent transition-colors duration-200"
+                    className="w-full px-4 py-3 bg-white border border-stone-300 rounded-lg text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200"
+                    style={{ '--tw-ring-color': 'var(--copper-light)' } as React.CSSProperties}
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -298,7 +308,8 @@ const Contact = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white border border-stone-300 rounded-lg text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent transition-colors duration-200"
+                  className="w-full px-4 py-3 bg-white border border-stone-300 rounded-lg text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200"
+                  style={{ '--tw-ring-color': 'var(--copper-light)' } as React.CSSProperties}
                   placeholder="Project, mentorship, career chat, or something else?"
                 />
               </div>
@@ -317,14 +328,16 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 bg-white border border-stone-300 rounded-lg text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent transition-colors duration-200 resize-vertical"
+                  className="w-full px-4 py-3 bg-white border border-stone-300 rounded-lg text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200 resize-vertical"
+                  style={{ '--tw-ring-color': 'var(--copper-light)' } as React.CSSProperties}
                   placeholder="Tell me about your project, mentorship request, career question, or just say hello!"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full px-6 py-4 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-medium transition-colors duration-200"
+                className="w-full px-6 py-4 text-white rounded-lg font-medium transition-all duration-200 hover:shadow-lg"
+                style={{ background: 'var(--copper)' }}
               >
                 <span className="flex items-center justify-center gap-2">
                   <Send className="w-5 h-5" />
@@ -334,7 +347,6 @@ const Contact = () => {
             </form>
           </div>
         </div>
-
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Fraunces } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -8,6 +8,12 @@ import { ThemeProvider } from "./providers/theme-provider";
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -26,7 +32,7 @@ export default function RootLayout({
       className="scroll-smooth"
       style={{ colorScheme: "light" }}
     >
-      <body className={`${plusJakartaSans.className} antialiased`}>
+      <body className={`${plusJakartaSans.className} ${fraunces.variable} antialiased`}>
         <ThemeProvider>
           <Navbar />
           {children}

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Video, Trophy, Calendar, PenLine, ArrowUpRight, ArrowRight } from "lucide-react";
 import { highlights } from "@/constants/highlights";
+import { useReveal } from "@/app/hooks/useReveal";
 
 const typeConfig = {
   content: { label: "Content", icon: Video, color: "text-blue-600 bg-blue-50 border-blue-200" },
@@ -12,11 +13,15 @@ const typeConfig = {
 };
 
 const Highlights = () => {
+  const headerRef = useReveal();
+  const gridRef = useReveal(0.05);
+
   return (
-    <section id="highlights" className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-stone-900">
+    <section id="highlights" className="py-20 md:py-32 bg-white grain relative">
+      <div className="container mx-auto px-4 relative z-10">
+        <div ref={headerRef} className="reveal text-center mb-16">
+          <div className="accent-line mx-auto mb-6" />
+          <h2 className="font-display text-4xl md:text-6xl font-bold mb-4 text-stone-900 tracking-tight">
             Highlights
           </h2>
           <p className="text-stone-500 text-lg max-w-2xl mx-auto">
@@ -24,7 +29,7 @@ const Highlights = () => {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 auto-rows-[180px] md:auto-rows-[200px] gap-4">
+        <div ref={gridRef} className="reveal max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 auto-rows-[180px] md:auto-rows-[200px] gap-4">
           {highlights.map((card) => {
             const config = typeConfig[card.type];
             const Icon = config.icon;
@@ -33,7 +38,7 @@ const Highlights = () => {
               <Link
                 key={card.id}
                 href={`/blog#${card.slug}`}
-                className={`${card.colSpan} ${card.rowSpan || ""} group relative bg-white rounded-2xl p-6 border border-stone-200 hover:border-stone-300 hover:shadow-sm transition-all duration-200 flex flex-col justify-between overflow-hidden cursor-pointer`}
+                className={`${card.colSpan} ${card.rowSpan || ""} group relative bg-white rounded-2xl p-6 border border-stone-200 hover:border-stone-300 card-lift flex flex-col justify-between overflow-hidden cursor-pointer`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
@@ -53,7 +58,7 @@ const Highlights = () => {
                       </span>
                     )}
                   </div>
-                  <h3 className="font-bold text-lg text-stone-900 mb-2 leading-snug group-hover:text-slate-700 transition-colors">
+                  <h3 className="font-bold text-lg text-stone-900 mb-2 leading-snug group-hover:text-stone-700 transition-colors">
                     {card.title}
                   </h3>
                   <p className="text-sm text-stone-500 leading-relaxed line-clamp-3">
@@ -69,7 +74,8 @@ const Highlights = () => {
         <div className="flex justify-center mt-10">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-medium transition-colors duration-200"
+            className="inline-flex items-center gap-2 px-6 py-3 text-white rounded-lg font-medium transition-all duration-200 hover:shadow-lg"
+            style={{ background: 'var(--copper)' }}
           >
             View All Posts
             <ArrowRight className="w-4 h-4" />

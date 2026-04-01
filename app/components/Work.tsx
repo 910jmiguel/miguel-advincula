@@ -10,6 +10,7 @@ import {
   Code2,
   Award,
 } from "lucide-react";
+import { useReveal } from "@/app/hooks/useReveal";
 
 interface Experience {
   id: number;
@@ -27,8 +28,9 @@ interface Experience {
 
 const Work = () => {
   const [activeTab, setActiveTab] = useState<"tech" | "parttime" | "leadership">("tech");
+  const headerRef = useReveal();
+  const contentRef = useReveal(0.1);
 
-  // Tech/Professional Experience
   const techExperience: Experience[] = [
     {
       id: 2,
@@ -71,7 +73,6 @@ const Work = () => {
     },
   ];
 
-  // Part-time Experience
   const partTimeExperience: Experience[] = [
     {
       id: 6,
@@ -152,7 +153,6 @@ const Work = () => {
     },
   ];
 
-  // Leadership Experience
   const leadershipExperience: Experience[] = [
     {
       id: 1,
@@ -176,10 +176,8 @@ const Work = () => {
     experience: Experience;
     isTech?: boolean;
   }) => (
-    <div className="group bg-white rounded-2xl p-6 border border-stone-200 hover:border-stone-300 transition-colors duration-200">
-      {/* Company Header */}
+    <div className="group bg-white rounded-2xl p-6 border border-stone-200 card-lift">
       <div className="flex items-start gap-4 mb-6">
-        {/* Company Logo */}
         <div className="flex-shrink-0">
           <div className="w-16 h-16 rounded-xl flex items-center justify-center border border-stone-200 overflow-hidden">
             {experience.logo &&
@@ -192,23 +190,22 @@ const Work = () => {
                 className="w-full h-full object-cover rounded-xl"
               />
             ) : (
-              <div className="w-full h-full bg-stone-100 flex items-center justify-center">
-                <Building className="w-8 h-8 text-stone-500" />
+              <div className="w-full h-full flex items-center justify-center" style={{ background: 'var(--copper-subtle)' }}>
+                <Building className="w-8 h-8" style={{ color: 'var(--copper)' }} />
               </div>
             )}
           </div>
         </div>
 
-        {/* Company Info */}
         <div className="flex-1 min-w-0">
           <h3 className="font-bold text-xl text-stone-900 mb-1">
             {experience.position}
           </h3>
-          <p className="text-lg text-slate-700 font-medium mb-2">
+          <p className="text-lg font-medium mb-2" style={{ color: 'var(--copper-dark)' }}>
             {experience.company}
           </p>
           <div className="flex flex-wrap gap-2 text-sm text-stone-500">
-            <span className="flex items-center gap-1 bg-stone-100 px-2 py-1 rounded-md border border-stone-200">
+            <span className="flex items-center gap-1 px-2 py-1 rounded-md border border-stone-200" style={{ background: 'var(--copper-subtle)' }}>
               <Briefcase className="w-3 h-3" />
               {experience.type}
             </span>
@@ -224,12 +221,10 @@ const Work = () => {
         </div>
       </div>
 
-      {/* Description */}
       <p className="text-stone-600 leading-relaxed mb-6">
         {experience.description}
       </p>
 
-      {/* Skills/Tech Stack */}
       <div className="space-y-3">
         <h4 className="text-sm font-medium text-stone-500 uppercase tracking-wide">
           {isTech ? "Tech Stack" : "Key Skills"}
@@ -239,7 +234,12 @@ const Work = () => {
             (skill: string, index: number) => (
               <span
                 key={index}
-                className="px-3 py-1 bg-stone-100 border border-stone-200 rounded-full text-sm font-medium text-stone-700"
+                className="px-3 py-1 rounded-full text-sm font-medium border"
+                style={{
+                  background: 'var(--copper-subtle)',
+                  borderColor: 'var(--copper-muted)',
+                  color: 'var(--copper-dark)',
+                }}
               >
                 {skill}
               </span>
@@ -250,14 +250,24 @@ const Work = () => {
     </div>
   );
 
+  const tabs = [
+    { key: "tech" as const, label: "Tech Experience", icon: Code2 },
+    { key: "parttime" as const, label: "Non-Tech Experience", icon: Clock },
+    { key: "leadership" as const, label: "Leadership", icon: Award },
+  ];
+
+  const experienceMap = {
+    tech: { data: techExperience, isTech: true },
+    parttime: { data: partTimeExperience, isTech: false },
+    leadership: { data: leadershipExperience, isTech: false },
+  };
+
   return (
-    <section
-      id="work"
-      className="py-16 md:py-24 bg-white"
-    >
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-stone-900">
+    <section id="work" className="py-20 md:py-32 bg-white grain relative">
+      <div className="container mx-auto px-4 relative z-10">
+        <div ref={headerRef} className="reveal text-center mb-16">
+          <div className="accent-line mx-auto mb-6" />
+          <h2 className="font-display text-4xl md:text-6xl font-bold mb-4 text-stone-900 tracking-tight">
             Work Experience
           </h2>
           <p className="text-stone-500 text-lg max-w-2xl mx-auto">
@@ -267,64 +277,32 @@ const Work = () => {
 
         {/* Tab Navigation */}
         <div className="flex justify-center mb-12">
-          <div className="bg-stone-100 rounded-2xl p-1 border border-stone-200 flex flex-wrap justify-center gap-1">
-            <button
-              onClick={() => setActiveTab("tech")}
-              className={`px-6 py-3 rounded-xl transition-colors duration-200 font-medium ${
-                activeTab === "tech"
-                  ? "bg-slate-700 text-white shadow-sm"
-                  : "text-stone-500 hover:text-stone-900"
-              }`}
-            >
-              <span className="flex items-center gap-2">
-                <Code2 className="w-4 h-4" />
-                Tech Experience
-              </span>
-            </button>
-            <button
-              onClick={() => setActiveTab("parttime")}
-              className={`px-6 py-3 rounded-xl transition-colors duration-200 font-medium ${
-                activeTab === "parttime"
-                  ? "bg-slate-700 text-white shadow-sm"
-                  : "text-stone-500 hover:text-stone-900"
-              }`}
-            >
-              <span className="flex items-center gap-2">
-                <Clock className="w-4 h-4" />
-                Non-Tech Experience
-              </span>
-            </button>
-            <button
-              onClick={() => setActiveTab("leadership")}
-              className={`px-6 py-3 rounded-xl transition-colors duration-200 font-medium ${
-                activeTab === "leadership"
-                  ? "bg-slate-700 text-white shadow-sm"
-                  : "text-stone-500 hover:text-stone-900"
-              }`}
-            >
-              <span className="flex items-center gap-2">
-                <Award className="w-4 h-4" />
-                Leadership
-              </span>
-            </button>
+          <div className="bg-white rounded-2xl p-1 border border-stone-200 flex flex-wrap justify-center gap-1 shadow-sm">
+            {tabs.map(({ key, label, icon: Icon }) => (
+              <button
+                key={key}
+                onClick={() => setActiveTab(key)}
+                className={`px-6 py-3 rounded-xl transition-all duration-200 font-medium ${
+                  activeTab === key
+                    ? "text-white shadow-sm"
+                    : "text-stone-500 hover:text-stone-900"
+                }`}
+                style={activeTab === key ? { background: 'var(--copper)' } : {}}
+              >
+                <span className="flex items-center gap-2">
+                  <Icon className="w-4 h-4" />
+                  {label}
+                </span>
+              </button>
+            ))}
           </div>
         </div>
 
-        {/* Experience Content */}
-        <div className="max-w-4xl mx-auto">
-          {activeTab === "tech" && (
-            <div className="space-y-8">
-              {techExperience.length > 0 ? (
-                techExperience.map((experience, index) => (
-                  <div
-                    key={experience.id}
-                    className="animate-fade-in"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <ExperienceCard experience={experience} isTech={true} />
-                  </div>
-                ))
-              ) : (
+        <div ref={contentRef} className="reveal max-w-4xl mx-auto">
+          {(() => {
+            const { data, isTech } = experienceMap[activeTab];
+            if (data.length === 0) {
+              return (
                 <div className="text-center py-16">
                   <div className="bg-white rounded-2xl p-8 border border-stone-200">
                     <Briefcase className="w-16 h-16 text-stone-400 mx-auto mb-4" />
@@ -332,45 +310,27 @@ const Work = () => {
                       Ready for New Opportunities
                     </h3>
                     <p className="text-stone-500 max-w-md mx-auto">
-                      I&apos;m actively seeking internships, co-op positions,
-                      and entry-level roles where I can apply my skills and grow
-                      as a developer.
+                      I&apos;m actively seeking roles where I can apply my skills and grow.
                     </p>
                   </div>
                 </div>
-              )}
-            </div>
-          )}
-
-          {activeTab === "parttime" && (
-            <div className="space-y-8">
-              {partTimeExperience.map((experience, index) => (
-                <div
-                  key={experience.id}
-                  className="animate-fade-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <ExperienceCard experience={experience} isTech={false} />
-                </div>
-              ))}
-            </div>
-          )}
-
-          {activeTab === "leadership" && (
-            <div className="space-y-8">
-              {leadershipExperience.map((experience, index) => (
-                <div
-                  key={experience.id}
-                  className="animate-fade-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <ExperienceCard experience={experience} isTech={false} />
-                </div>
-              ))}
-            </div>
-          )}
+              );
+            }
+            return (
+              <div className="space-y-8">
+                {data.map((experience, index) => (
+                  <div
+                    key={experience.id}
+                    className="animate-fade-in"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <ExperienceCard experience={experience} isTech={isTech} />
+                  </div>
+                ))}
+              </div>
+            );
+          })()}
         </div>
-
       </div>
     </section>
   );
