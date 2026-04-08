@@ -14,6 +14,9 @@ import {
   Sparkles,
   Users,
   TrendingUp,
+  Trophy,
+  Mic,
+  Megaphone,
 } from "lucide-react";
 import { useReveal } from "@/app/hooks/useReveal";
 
@@ -22,6 +25,34 @@ const About = () => {
   const profileRef = useReveal();
   const eduRef = useReveal();
   const interestsRef = useReveal();
+  const cocurricularRef = useReveal();
+
+  const cocurricular = [
+    {
+      icon: <Users className="w-7 h-7" />,
+      title: "CUTC",
+      description:
+        "Tech Associate & Panelist at the Canadian Undergraduate Technology Conference — organizing events and speaking on panels",
+    },
+    {
+      icon: <Trophy className="w-7 h-7" />,
+      title: "Hackathon Competitor",
+      description:
+        "Active hackathon participant — ConUHacks, HackCanada, GenAI Genesis, BEST Startup Experience (3rd place)",
+    },
+    {
+      icon: <Mic className="w-7 h-7" />,
+      title: "Speaker & Judge",
+      description:
+        "Judging AI projects at CUTC Promptathon and panelist at OTU's 'Hello AI' discussing tech careers",
+    },
+    {
+      icon: <Megaphone className="w-7 h-7" />,
+      title: "Alumni Ambassador",
+      description:
+        "York University Student Alumni Ambassador — representing the university and connecting students with alumni networks",
+    },
+  ];
 
   const interests = [
     {
@@ -248,6 +279,39 @@ const About = () => {
                   </h4>
                   <p className="text-stone-500 leading-relaxed">
                     {interest.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Co-curricular Activities */}
+        <div ref={cocurricularRef} className="reveal mb-16">
+          <div className="text-center mb-12">
+            <h3 className="font-display text-3xl font-bold text-stone-900 mb-4">
+              Co-curricular Activities
+            </h3>
+            <p className="text-stone-500 max-w-2xl mx-auto">
+              Involvement alongside my studies
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {cocurricular.map((activity) => (
+              <div
+                key={activity.title}
+                className="group bg-white rounded-2xl p-6 border border-stone-200 card-lift cursor-default"
+              >
+                <div>
+                  <div className="inline-flex p-3 rounded-xl mb-4 transition-colors duration-300 group-hover:scale-105 transform" style={{ background: 'var(--copper-muted)' }}>
+                    <div className="transition-colors duration-300" style={{ color: 'var(--copper)' }}>{activity.icon}</div>
+                  </div>
+                  <h4 className="font-bold text-xl text-stone-900 mb-3">
+                    {activity.title}
+                  </h4>
+                  <p className="text-stone-500 leading-relaxed">
+                    {activity.description}
                   </p>
                 </div>
               </div>

@@ -9,6 +9,7 @@ import {
   Clock,
   Code2,
   Award,
+  Heart,
 } from "lucide-react";
 import { useReveal } from "@/app/hooks/useReveal";
 
@@ -27,7 +28,7 @@ interface Experience {
 }
 
 const Work = () => {
-  const [activeTab, setActiveTab] = useState<"tech" | "parttime" | "leadership">("tech");
+  const [activeTab, setActiveTab] = useState<"tech" | "parttime" | "leadership" | "volunteer">("tech");
   const headerRef = useReveal();
   const contentRef = useReveal(0.1);
 
@@ -169,6 +170,35 @@ const Work = () => {
     },
   ];
 
+  const volunteerExperience: Experience[] = [
+    {
+      id: 1,
+      company: "Canadian Undergraduate Technology Conference (CUTC)",
+      position: "Tech Associate & Panelist",
+      type: "Volunteer",
+      duration: "Nov 2025 – Present",
+      location: "Toronto, ON",
+      description:
+        "Contributing to CUTC as a Tech Associate, helping organize and run technology-focused events for undergraduate students across Canada. Served as a judge at the Caffeine.ai Promptathon evaluating AI prompt engineering projects, and participated as a panelist at OTU's 'Hello AI' event discussing AI trends, career paths, and the future of tech with students and industry professionals.",
+      logo: "/company-placeholder.svg",
+      skills: ["Event Organization", "Public Speaking", "Judging", "AI", "Mentorship", "Community Building"],
+      color: "from-emerald-500 to-teal-500",
+    },
+    {
+      id: 2,
+      company: "York University",
+      position: "Student Alumni Ambassador",
+      type: "Volunteer",
+      duration: "2025 – Present",
+      location: "Toronto, ON",
+      description:
+        "Representing York University as a Student Alumni Ambassador, bridging the gap between current students and alumni networks. Engaging with prospective and current students to share experiences, promote university initiatives, and foster a sense of community within the York alumni ecosystem.",
+      logo: "/yorkulogo.jpg",
+      skills: ["Networking", "Public Speaking", "Community Engagement", "Event Coordination", "Mentorship"],
+      color: "from-emerald-500 to-teal-500",
+    },
+  ];
+
   const ExperienceCard = ({
     experience,
     isTech = true,
@@ -254,12 +284,14 @@ const Work = () => {
     { key: "tech" as const, label: "Tech Experience", icon: Code2 },
     { key: "parttime" as const, label: "Non-Tech Experience", icon: Clock },
     { key: "leadership" as const, label: "Leadership", icon: Award },
+    { key: "volunteer" as const, label: "Volunteer & Community", icon: Heart },
   ];
 
   const experienceMap = {
     tech: { data: techExperience, isTech: true },
     parttime: { data: partTimeExperience, isTech: false },
     leadership: { data: leadershipExperience, isTech: false },
+    volunteer: { data: volunteerExperience, isTech: false },
   };
 
   return (

@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "#hero", label: "Home" },
   { href: "#about", label: "About" },
+  { href: "#goals", label: "Goals" },
   { href: "#skills", label: "Skills" },
   { href: "#work", label: "Work" },
   { href: "#projects", label: "Projects" },
@@ -23,14 +23,8 @@ const Navbar = () => {
       <header className="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-200/60">
         <div className="container flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <span>
-              <Image
-                src="/navbar_logo.png"
-                alt="navbar logo"
-                width={300}
-                height={300}
-                className="invert"
-              />
+            <span className="font-display text-xl font-bold tracking-tight text-stone-900">
+              Miguel Advincula
             </span>
           </Link>
 

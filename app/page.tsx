@@ -1,5 +1,6 @@
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Goals from "./components/Goals";
 import Highlights from "./components/Highlights";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
@@ -14,6 +15,8 @@ export default function Home() {
       <Hero />
       <Separator />
       <About />
+      <Separator />
+      <Goals />
       <Separator />
       <Skills />
       <Separator />

@@ -45,14 +45,20 @@ const Hero = () => {
         <div className="flex flex-col items-center gap-4 pt-16 lg:pt-0">
           <div className="flex items-center justify-center mb-4">
             <div className="relative">
-              <Image
-                src="/miguel.jpeg"
-                alt="miguel"
-                width="350"
-                height="350"
-                className="rounded-full object-cover object-top shadow-xl"
+              <div
+                className="w-[300px] h-[300px] md:w-[350px] md:h-[350px] rounded-full overflow-hidden shadow-xl"
                 style={{ border: '3px solid var(--copper-light)' }}
-              />
+              >
+                <Image
+                  src="/miguel3.jpg"
+                  alt="miguel"
+                  width={700}
+                  height={700}
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: '50% 15%' }}
+                  priority
+                />
+              </div>
               {/* Floating decorative dot */}
               <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full animate-float" style={{ background: 'var(--copper)' }} />
             </div>
