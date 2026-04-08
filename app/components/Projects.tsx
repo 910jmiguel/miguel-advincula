@@ -140,14 +140,14 @@ const Projects = () => {
   );
 
   return (
-    <section id="projects" className="py-20 md:py-32 bg-stone-50 grain relative">
+    <section id="projects" className="py-16 md:py-24 bg-stone-50 grain relative">
       <div className="container mx-auto px-4 relative z-10">
-        <div ref={headerRef} className="reveal text-center mb-16">
+        <div ref={headerRef} className="reveal text-center mb-14">
           <div className="accent-line mx-auto mb-6" />
-          <h2 className="font-display text-4xl md:text-6xl font-bold mb-4 text-stone-900 tracking-tight">
+          <h2 className="font-display text-4xl md:text-5xl font-bold mb-3 text-stone-900 tracking-tight">
             Projects
           </h2>
-          <p className="text-stone-500 text-lg max-w-2xl mx-auto">
+          <p className="text-stone-400 text-base max-w-lg mx-auto">
             Things I&apos;ve built
           </p>
         </div>

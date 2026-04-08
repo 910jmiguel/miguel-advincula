@@ -118,7 +118,7 @@ const Contact = () => {
       >
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-6xl font-bold mb-4 text-stone-900">
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-3 text-stone-900">
               Contact
             </h2>
             <p className="text-stone-500 text-lg max-w-2xl mx-auto">
@@ -133,13 +133,13 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-20 md:py-32 bg-stone-50 grain relative min-h-screen"
+      className="py-16 md:py-24 bg-stone-50 grain relative min-h-screen"
     >
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
         {/* Header */}
         <div ref={headerRef} className="reveal text-center mb-16">
           <div className="accent-line mx-auto mb-6" />
-          <h2 className="font-display text-4xl md:text-6xl font-bold mb-4 text-stone-900 tracking-tight">
+          <h2 className="font-display text-4xl md:text-5xl font-bold mb-3 text-stone-900 tracking-tight">
             Contact
           </h2>
           <p className="text-stone-500 text-lg max-w-2xl mx-auto">

@@ -295,35 +295,36 @@ const Work = () => {
   };
 
   return (
-    <section id="work" className="py-20 md:py-32 bg-white grain relative">
+    <section id="work" className="py-16 md:py-24 bg-white grain relative">
       <div className="container mx-auto px-4 relative z-10">
         <div ref={headerRef} className="reveal text-center mb-16">
           <div className="accent-line mx-auto mb-6" />
-          <h2 className="font-display text-4xl md:text-6xl font-bold mb-4 text-stone-900 tracking-tight">
+          <h2 className="font-display text-4xl md:text-5xl font-bold mb-3 text-stone-900 tracking-tight">
             Work Experience
           </h2>
-          <p className="text-stone-500 text-lg max-w-2xl mx-auto">
+          <p className="text-stone-400 text-base max-w-lg mx-auto">
             Where I&apos;ve worked
           </p>
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex justify-center mb-12">
-          <div className="bg-white rounded-2xl p-1 border border-stone-200 flex flex-wrap justify-center gap-1 shadow-sm">
+        <div className="flex justify-center mb-10">
+          <div className="bg-white rounded-xl p-1 border border-stone-200 flex gap-0.5 overflow-x-auto max-w-full">
             {tabs.map(({ key, label, icon: Icon }) => (
               <button
                 key={key}
                 onClick={() => setActiveTab(key)}
-                className={`px-6 py-3 rounded-xl transition-all duration-200 font-medium ${
+                className={`px-4 py-2.5 rounded-lg transition-all duration-200 text-sm font-medium whitespace-nowrap ${
                   activeTab === key
-                    ? "text-white shadow-sm"
+                    ? "text-white"
                     : "text-stone-500 hover:text-stone-900"
                 }`}
                 style={activeTab === key ? { background: 'var(--copper)' } : {}}
               >
-                <span className="flex items-center gap-2">
-                  <Icon className="w-4 h-4" />
-                  {label}
+                <span className="flex items-center gap-1.5">
+                  <Icon className="w-3.5 h-3.5" />
+                  <span className="hidden sm:inline">{label}</span>
+                  <span className="sm:hidden">{label.split(' ')[0]}</span>
                 </span>
               </button>
             ))}
