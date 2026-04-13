@@ -1,11 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Script from "next/script";
 import {
   Mail,
   Linkedin,
   Github,
   Instagram,
-  MapPin,
   MessageSquare,
   Send,
   Copy,
@@ -88,13 +88,6 @@ const Contact = () => {
       copyText: "https://github.com/910jmiguel",
     },
     {
-      icon: <MapPin className="w-6 h-6" />,
-      title: "Location",
-      value: "Toronto, Ontario, Canada",
-      href: "https://maps.google.com/?q=Toronto,Ontario,Canada",
-      copyText: "Toronto, Ontario, Canada",
-    },
-    {
       icon: <Instagram className="w-6 h-6" />,
       title: "Instagram",
       value: "@jmiguel.adv",
@@ -110,30 +103,10 @@ const Contact = () => {
     },
   ];
 
-  if (!mounted) {
-    return (
-      <section
-        id="contact"
-        className="py-20 md:py-32 bg-stone-50 min-h-screen"
-      >
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-3 text-stone-900">
-              Contact
-            </h2>
-            <p className="text-stone-500 text-lg max-w-2xl mx-auto">
-              Loading...
-            </p>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
   return (
     <section
       id="contact"
-      className="py-16 md:py-24 bg-stone-50 grain relative min-h-screen"
+      className="py-16 md:py-24 bg-stone-50 grain relative"
     >
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
         {/* Header */}

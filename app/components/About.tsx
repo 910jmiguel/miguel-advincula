@@ -93,19 +93,29 @@ const About = () => {
         {/* Profile + Education — side by side on desktop */}
         <div className="max-w-5xl mx-auto mb-16">
           <div className="grid lg:grid-cols-5 gap-6">
-            {/* Profile card — compact */}
-            <div className="lg:col-span-2 bg-white rounded-2xl p-6 border border-stone-200">
+            {/* Profile card — video hero */}
+            <div className="lg:col-span-2 bg-white rounded-2xl p-4 border border-stone-200">
               <div className="flex flex-col items-center text-center">
-                <div className="relative w-36 h-36 rounded-full overflow-hidden mb-4" style={{ border: '2px solid var(--copper-light)' }}>
-                  <Image
-                    src="/miguel2.jpeg"
-                    alt="Miguel Advincula"
-                    width={144}
-                    height={144}
+                <div
+                  className="relative w-full aspect-[9/16] rounded-xl overflow-hidden mb-4 bg-stone-100 group"
+                  style={{ border: '2px solid var(--copper-light)' }}
+                >
+                  <video
+                    src="/v14044g50000d6dpas7og65u0tfadj00.MP4"
+                    poster="/miguel2.jpeg"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    controls
+                    preload="metadata"
                     className="w-full h-full object-cover"
                   />
+                  <div className="pointer-events-none absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest text-white backdrop-blur-sm" style={{ background: 'rgba(0,0,0,0.45)' }}>
+                    About Me
+                  </div>
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-2 px-2 pb-2">
                   <div className="flex items-center justify-center gap-1.5 text-stone-500 text-sm">
                     <MapPin className="w-3.5 h-3.5" />
                     Toronto, ON
@@ -118,7 +128,7 @@ const About = () => {
             </div>
 
             {/* Education — cleaner */}
-            <div ref={eduRef} className="reveal lg:col-span-3 bg-white rounded-2xl p-6 md:p-8 border border-stone-200">
+            <div ref={eduRef} className="reveal lg:col-span-3 bg-white rounded-2xl p-6 md:p-8 border border-stone-200 flex flex-col">
               <div className="flex items-center gap-4 mb-5">
                 <div className="p-2.5 rounded-lg" style={{ background: 'var(--copper)' }}>
                   <GraduationCap className="w-6 h-6 text-white" />
@@ -155,6 +165,34 @@ const About = () => {
                     <span className="px-2.5 py-1 rounded-md bg-stone-50 border border-stone-100">
                       3rd Year
                     </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Relevant coursework — fills remaining space */}
+              <div className="mt-auto pt-6">
+                <div className="border-t border-stone-100 pt-5">
+                  <span className="text-xs font-semibold uppercase tracking-widest text-stone-400">
+                    Relevant Coursework
+                  </span>
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    {[
+                      "Data Structures",
+                      "Algorithms",
+                      "Object-Oriented Programming",
+                      "Operating Systems",
+                      "Databases",
+                      "Web Development",
+                      "Software Design",
+                      "Computer Organization",
+                    ].map((c) => (
+                      <span
+                        key={c}
+                        className="px-3 py-1.5 rounded-md bg-stone-50 border border-stone-100 text-xs text-stone-600 font-medium"
+                      >
+                        {c}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>
